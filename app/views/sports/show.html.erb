@@ -1,0 +1,17 @@
+<p>
+  <strong>Sport name:</strong>
+  <%= @sport.sport_name %>
+</p>
+
+<p>
+  <strong>Sport equipement:</strong>
+  <%= @sport.sport_equipement %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @sport.user.username %>
+</p>
+
+<%= link_to 'Edit', edit_sport_path(@sport) %> |
+<%= link_to 'Back', sports_path %>
