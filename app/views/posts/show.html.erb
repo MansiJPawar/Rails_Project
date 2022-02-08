@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
-  <%= @post.title %>
+  <strong>Sport name:</strong>
+  <%= @post.sport_name %>
 </p>
 
 <p>
-  <strong>Description:</strong>
-  <%= @post.description %>
+  <strong>Title:</strong>
+  <%= @post.title %>
 </p>
 
 <p>
@@ -16,13 +16,29 @@
 </p>
 
 <p>
+  <strong>Description:</strong>
+  <%= @post.description %>
+</p>
+
+<p>
   <strong>Tag:</strong>
   <%= @post.tag %>
 </p>
 
+<br/>
+<p>
+  <h2>
+    <%= @post.comments.count %>
+    Comments
+  </h2>
+  <%= render @post.comments  %>
+  <h3>Add Comments</h3>
+  <%= render 'comments/form' %>
+</p>
+
 <p>
   <strong>User:</strong>
-  <%= @post.user %>
+  <%= @post.user.email.split('@')[0].capitalize  %>
 </p>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |

@@ -1,15 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  sport_name: MyString
   title: MyString
-  description: MyText
   image: MyString
+  description: MyText
   tag: MyString
   user: one
 
 two:
+  sport_name: MyString
   title: MyString
-  description: MyText
   image: MyString
+  description: MyText
   tag: MyString
   user: two

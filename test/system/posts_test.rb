@@ -16,6 +16,7 @@ class PostsTest < ApplicationSystemTestCase
 
     fill_in "Description", with: @post.description
     fill_in "Image", with: @post.image
+    fill_in "Sport name", with: @post.sport_name
     fill_in "Tag", with: @post.tag
     fill_in "Title", with: @post.title
     fill_in "User", with: @post.user_id
@@ -31,6 +32,7 @@ class PostsTest < ApplicationSystemTestCase
 
     fill_in "Description", with: @post.description
     fill_in "Image", with: @post.image
+    fill_in "Sport name", with: @post.sport_name
     fill_in "Tag", with: @post.tag
     fill_in "Title", with: @post.title
     fill_in "User", with: @post.user_id
