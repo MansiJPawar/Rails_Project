@@ -16,6 +16,7 @@
 //= require bootstrap-sprockets
 //= require activestorage
 //= require turbolinks
+//= require datatables
 //= require toggle
 //= require_tree .
 

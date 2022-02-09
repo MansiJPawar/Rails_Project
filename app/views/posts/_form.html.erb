@@ -11,9 +11,15 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <!-- <div class="field">
     <%= form.label :sport_name %>
     <%= form.text_field :sport_name %>
+    
+  </div> -->
+
+  <div class="field">
+    <%= form.label :sport %>
+    <%= form.collection_select(:sport_id, Sport.all, :id, :sport_name, { :prompt => 'Select a Sport', :selected => @post.sport_id }, { class: 'form-control' }) %>
   </div>
 
   <div class="field">
@@ -22,9 +28,9 @@
     <%= form.text_field :title %>
   </div>
 
-  <div class="field">
+  <div class="field" >
     <%= form.label :image %>
-    <%= form.text_field :image %>
+    <%= form.file_field :image %>
   </div>
 
   <div class="field">

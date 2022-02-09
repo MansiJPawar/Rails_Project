@@ -12,59 +12,58 @@
 <p class="text-gray font-weight-bold text-uppercase px-3 small pb-4 mb-0">Dashboard</p>
 
 <!-- <p class="text-gray font-weight-bold text-uppercase px-3 small py-4 mb-0">Module</p>    -->
-<div style="margin-left: 30px;">
-   <ul class="nav flex-column bg-dark mb-0">
 
-      <li class="nav-item">
-         <i class="fas fa-home mr-3 text-primary fa-fw"></i>Home
+<div style="margin-left: 30px;">
+   <ul class="nav flex-column bg-dark mb-0" style="margin-left: 22px;">
+
+      <li class="nav-item navbar-brand mb-0 h1">
+         <i class="fas fa-home mr-3 text-primary fa-fw"></i>
+         <%= link_to 'Home', root_path %>
       </li> 
       <br/>
+      <div class="dropdown-divider text-muted" style="width: 100%; border-color: rgb(100, 100, 100)"></div>
    
-      <li class="nav-item">
-         <i class="fa fa-solid fa-flag-pennant mr-3 text-primary fa-fw"></i>
+      <li class="nav-item navbar-brand mb-0 h1">
+         <!-- <i class="fa fa-solid fa-flag-pennant mr-3 text-primary fa-fw"></i> -->
          <%= link_to 'Sports', sports_path %>
       </li>
       <br/>
+      <div class="dropdown-divider" style="width: 100%; border-color: rgb(100, 100, 100)"></div>
    
-      <li class="nav-item">
-         <i class="fa fa-solid fa-image-portrait mr-3 text-primary fa-fw"></i>
+      <li class="nav-item navbar-brand mb-0 h1">
+         <!-- <i class="fa fa-solid fa-image-portrait mr-3 text-primary fa-fw"></i> -->
          <%= link_to 'Posts', posts_path %>
       </li>
       <br/>
-   </ul>
-   
-   <br/><br/>
-   
-   
-   <ul class="nav flex-column bg-dark mb-0">
+      <div class="dropdown-divider" style="width: 100%; border-color: rgb(100, 100, 100)"></div>
 
       <% if current_user %>
    
-      <li class="nav-item">
-         <i class="fa fa-solid fa-arrow-right-from-bracket mr-3 text-primary fa-fw"></i>
+      <li class="nav-item navbar-brand mb-0 h1">
+         <!-- <i class="fa fa-solid fa-arrow-right-from-bracket mr-3 text-primary fa-fw"></i> -->
          <%= link_to 'Sign Out', destroy_user_session_path , method: :delete %>
-      </li>
+      </li><div class="dropdown-divider" style="width: 100%; border-color: rgb(100, 100, 100)"></div>
    
-      <li class="nav-item">
-            <i class="fa fa-solid fa-pen-to-square mr-3 text-primary fa-fw"></i>
+      <li class="nav-item navbar-brand mb-0 h1">
+            <!-- <i class="fa fa-solid fa-pen-to-square mr-3 text-primary fa-fw"></i> -->
             <%= link_to "Edit Account", edit_user_registration_path%>
-      </li>
+      </li><div class="dropdown-divider" style="width: 100%; border-color: rgb(100, 100, 100)"></div>
 
       <% else %>
    
-      <li class="nav-item">
-         <i class="fa fa-solid fa-user-plus mr-3 text-primary fa-fw"></i>
+      <li class="nav-item navbar-brand mb-0 h1">
+         <!-- <i class="fa fa-solid fa-user-plus mr-3 text-primary fa-fw"></i> -->
          <%= link_to 'Sign Up', new_user_registration_path %>
-      </li> 
+      </li><div class="dropdown-divider" style="width: 100%; border-color: rgb(100, 100, 100)"></div>
       
    
-      <li class="nav-item">
-         <i class="fa fa-solid fa-arrow-right-to-bracket mr-3 text-primary fa-fw"></i>
+      <li class="nav-item navbar-brand mb-0 h1">
+         <!-- <i class="fa fa-solid fa-arrow-right-to-bracket mr-3 text-primary fa-fw"></i> -->
          <%= link_to 'Sign In', new_user_session_path %>
-      </li>
+      </li><div class="dropdown-divider" style="width: 100%; border-color: rgb(100, 100, 100)"></div>
       
       <% end %>
-   
+
    </ul>
 </div>
 </div>

@@ -28,7 +28,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use ActiveStorage variant
-# gem 'mini_magick', '~> 4.8'
+gem 'mini_magick', '~> 4.8'
 
 
 # Use Capistrano for deployment
@@ -74,3 +74,8 @@ gem 'bootstrap', '~> 4.0'
 gem 'sprockets-rails', '~> 3.4', '>= 3.4.2'
 
 gem 'font-awesome-sass', '~> 5.15.1'
+
+gem 'carrierwave', '~> 2.0'
+gem "jquery-datatables", "~> 1.10"
+
+gem "faker", "~> 2.19"
