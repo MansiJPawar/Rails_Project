@@ -1,3 +1,83 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+    background-color: #599fd9;
+    background-image: linear-gradient(135.9deg, rgba(109,25,252,1) 16.4%, rgba(125,31,165,1) 56.1%);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.vertical-nav {
+    min-width: 15rem;
+    width: 15rem;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.4%;
+}
+
+.page-content {
+    width: calc(100% - 15rem);
+    margin-left: 15rem;
+    transition: all 0.4s;
+}
+
+#sidebar.active {
+    margin-left: -15rem;
+}
+
+#content.active {
+    width: 100%;
+    margin: 0;
+}
+
+.separator {
+    margin: 3rem 0;
+    border-bottom: 1px dashed #fff;
+}
+
+.text-uppercase {
+    letter-spacing: 0.1em;
+}
+
+.text-gray {
+    color: #aaa;
+}
+
+.nav-link {
+   text-transform: capitalize;   
+}
+
+.nav-link:hover {
+    background: #d5cfcf;   
+ }
+
+.text-primary{
+   color:#7579e7 !important;
+}
+
+#img1 {
+    width: 40px;
+    height: 40px;
+}
+
+@media (max-width: 768px){
+  #sidebar {
+      margin-left: -15rem;
+  }
+  #sidebar.active {
+      margin-left: 0;
+  }
+  #content {
+    width: 100%;
+    margin: 0;
+  }
+  #content.active{
+      margin-left: 15rem;
+      width: calc(100% - 15rem);
+  }
+}

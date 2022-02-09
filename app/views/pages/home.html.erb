@@ -1,8 +1,121 @@
-<h1>HOME</h1>
-<p>Welcome to Sport Blog</p>
+<div class="vertical-nav bg-dark text-white" id="sidebar">
+  <div class="py-4 px-3 mb-4 bg-dark">
+    <div class="media d-flex align-items-center">
+       <img src="#" alt="..." width="80" height="80" class="mr-3 rounded-circle img-thumbnail shadow-sm">
+      <div class="media-body">
+         <h4 class="m-0">Mansi</h4>
+         <p class="font-weight-normal text-muted mb-0">My Sport</p>
+      </div>
+    </div>     
+  </div>
+
+<p class="text-gray font-weight-bold text-uppercase px-3 small pb-4 mb-0">Dashboard</p>
+
+<!-- <p class="text-gray font-weight-bold text-uppercase px-3 small py-4 mb-0">Module</p>    -->
+<div style="margin-left: 30px;">
+   <ul class="nav flex-column bg-dark mb-0">
+
+      <li class="nav-item">
+         <i class="fas fa-home mr-3 text-primary fa-fw"></i>Home
+      </li> 
+      <br/>
+   
+      <li class="nav-item">
+         <i class="fa fa-solid fa-flag-pennant mr-3 text-primary fa-fw"></i>
+         <%= link_to 'Sports', sports_path %>
+      </li>
+      <br/>
+   
+      <li class="nav-item">
+         <i class="fa fa-solid fa-image-portrait mr-3 text-primary fa-fw"></i>
+         <%= link_to 'Posts', posts_path %>
+      </li>
+      <br/>
+   </ul>
+   
+   <br/><br/>
+   
+   
+   <ul class="nav flex-column bg-dark mb-0">
+
+      <% if current_user %>
+   
+      <li class="nav-item">
+         <i class="fa fa-solid fa-arrow-right-from-bracket mr-3 text-primary fa-fw"></i>
+         <%= link_to 'Sign Out', destroy_user_session_path , method: :delete %>
+      </li>
+   
+      <li class="nav-item">
+            <i class="fa fa-solid fa-pen-to-square mr-3 text-primary fa-fw"></i>
+            <%= link_to "Edit Account", edit_user_registration_path%>
+      </li>
+
+      <% else %>
+   
+      <li class="nav-item">
+         <i class="fa fa-solid fa-user-plus mr-3 text-primary fa-fw"></i>
+         <%= link_to 'Sign Up', new_user_registration_path %>
+      </li> 
+      
+   
+      <li class="nav-item">
+         <i class="fa fa-solid fa-arrow-right-to-bracket mr-3 text-primary fa-fw"></i>
+         <%= link_to 'Sign In', new_user_session_path %>
+      </li>
+      
+      <% end %>
+   
+   </ul>
+</div>
+</div>
+
+<!-- end vertical navbar -->
+
+<!-- page content holder -->
+<div class="page-content p-5" id="content">
+  <!-- toggle button -->
+  <button id="sidebarCollapse" type="button" class="btn btn-light bg-dark shadow-sm px-3 mb-3">
+     <i class="fa-thin fa-chart-simple-horizontal mr-1"></i>
+     <small class="text-uppercase font-weight-bold text-white">Menu</small>
+  </button>
+
+  <!-- demo content -->
+  <!-- <h2 class="display-4 text-white">vertical nav</h2>
+  <p class="lead text-white mb-0">abczcxvbbnn</p> -->
+  <div class="separater"></div>
+  <div class="row text-white">
+   <div class="col-lg-5">
+      <div class="lead" style="padding: 40px; font-weight: bolder; font-size: 50px;  text-transform: uppercase;  letter-spacing: 3px;" >
+         <p>Community</p>
+         <p>for sport enthusiast.</p>
+         <p> Join In</p>
+      </div>
+   </div>
+    <div class="col-lg-7">
+  <p class="lead">
+   <div style="width:100%;height:0;padding-bottom:77%;position:relative;">
+      <iframe src="https://giphy.com/embed/WlJnnlbnApNCM" width="100%" height="70%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+   </div>
+  </p>
+</div>
+</div>
+</div>
 
 
-<% if current_user %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <% if current_user %>
 <p>
    <%= link_to 'Sign Out', destroy_user_session_path , method: :delete %>
 </p>
@@ -21,12 +134,12 @@
 <%= link_to 'Sign In', new_user_session_path %>
 <% end %>
 
-<!-- 
+
 to link user page with sport page 
--->
+
 
 <%= link_to 'Sports', sports_path %>
 
 <br/>
 
-<%= link_to 'Posts', posts_path %>
+<%= link_to 'Posts', posts_path %> -->

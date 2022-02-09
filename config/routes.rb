@@ -3,6 +3,8 @@ Rails.application.routes.draw do
     resources :comments
   end
 
+  get '/posts/hashtag/:name', to:'posts#hashtags'
+
   resources :sports
   root to: 'pages#home'
   devise_for :users

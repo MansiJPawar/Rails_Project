@@ -1,3 +1,10 @@
 // Place all the styles related to the sports controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+    background-color: #8caac3;
+    background-image: linear-gradient(135.9deg, rgb(139, 78, 244) 16.4%, rgb(121, 89, 135) 56.1%);
+    min-height: 100vh;
+    overflow-x: hidden;
+}

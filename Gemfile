@@ -66,3 +66,11 @@ gem 'devise'
 
 # Use ActiveStorage variant custom
 gem 'image_processing', '~> 1.2'
+
+gem 'jquery-rails', '~> 4.4'
+
+gem 'bootstrap', '~> 4.0'
+
+gem 'sprockets-rails', '~> 3.4', '>= 3.4.2'
+
+gem 'font-awesome-sass', '~> 5.15.1'
