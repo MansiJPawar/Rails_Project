@@ -41,5 +41,5 @@
   <%= @post.user.email.split('@')[0].capitalize  %>
 </p>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<%= link_to 'Edit', edit_post_path(@post), class:"btn btn-outline-light" %> |
+<%= link_to 'Back', posts_path, class:"btn btn-outline-light" %>

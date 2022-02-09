@@ -1,17 +1,19 @@
-<p>
-  <strong>Sport name:</strong>
-  <%= @sport.sport_name %>
-</p>
-
-<p>
-  <strong>Sport equipement:</strong>
-  <%= @sport.sport_equipement %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @sport.user.username %>
-</p>
-
-<%= link_to 'Edit', edit_sport_path(@sport) %> |
-<%= link_to 'Back', sports_path %>
+<div style="width: 18rem;" class="container">
+  <div class="card-body">
+    <h5 class="card-title text-white font-weight-bold">Sport Details</h5>
+    <h6 class="card-subtitle mb-4 text-white">
+      <p>
+        <%= @sport.sport_name %>
+      </p>
+      <p>
+        <%= @sport.sport_equipement %>
+      </p>
+    </h6>
+    <p class="card-text text-white">
+      <strong>User:</strong>
+      <%= @sport.user.username %>
+    </p>
+    <%= link_to 'Edit', edit_sport_path(@sport), class:"btn btn-outline-light" %> |
+    <%= link_to 'Back', sports_path ,class:"btn btn-outline-light" %>
+  </div>
+</div>

@@ -1,16 +1,14 @@
 <%= form_for([@post,@post.comments.build]) do |f| %>
  <p>
-     <%= f.label :name %>
-     <%= f.text_field :name %>
+    <%= f.text_field :name ,class:"form-control", placeholder:"user name"%>
  </p>
  <br/>
  <p>
-    <%= f.label :body %>
-    <%= f.text_area :body %>
+    <%= f.text_area :body, class:"form-control", placeholder:"comment here" %>
  </p>
  <br/>
  <p>
-     <%= f.submit %>
+    <%= f.submit  class:"btn btn-outline-light" %>
  </p>
 
  <% end %>
