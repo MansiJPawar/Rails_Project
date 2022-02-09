@@ -11,9 +11,14 @@
 
   <body>
          
+    <div>
+       <% if notice %>
        <!-- call the _alerts.html.erb  -->
        <%= render 'layouts/alerts' %>
-      
+       <% end %>
+       <br/>
        <%= yield %>
+    </div>
+    
   </body>
 </html>

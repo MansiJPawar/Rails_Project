@@ -1,9 +1,9 @@
-<h2>Sign up</h2>
+<h2 style="color: #fff;" >Register</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
+  <div class="field form-group">
     <% if resource.avatar.attached? %>
       <%= image_tag(resource.avatar)%>
     <% else %>
@@ -12,26 +12,23 @@
   </div>
 
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <div class="field form-group">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", placeholder:"abc@gmail.com" %>
   </div>
 
-  <div class="field">
-    <%= f.label :password %>
+  <div class="field form-group">
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <%= f.password_field :password, autocomplete: "new-password", class:"form-control", placeholder:"password" %>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  <div class="field form-group">
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control", placeholder:"password-confirmation" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Sign up", class:"btn btn-outline-light"%>
   </div>
 <% end %>
 
