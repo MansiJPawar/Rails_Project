@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  player_name: MyString
+  sport_name: MyString
+  achievement: MyText
+  captain: false
+  gender: false
+
+two:
+  player_name: MyString
+  sport_name: MyString
+  achievement: MyText
+  captain: false
+  gender: false

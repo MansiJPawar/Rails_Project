@@ -1,58 +1,49 @@
 <p id="notice"><%= notice %></p>
 
-<div class="container">
-  <div class="row">
+<div class="container-fluid" style="padding: 50px;margin:0px;">
+    <div class="row" style="margin-left:40px;">
+
+      <div class="col-6">
+         <img src="<%= @post.image %>" class= "post-show", style="width: 300px;height:200px;">
+         
+        <div 
+        style="
+           padding: 20px;
+           width:300px;
+           height:200px;
+           color:white;
+           margin-top:25px;
+           font-weight: 900px;
+           font-size: larger;
+           box-shadow: 0 8px 8px -4px rgb(32, 45, 165);">
+          <div style="margin-bottom: 30px;margin-left:25px;">
+            <%= @post.sport_name %>
+            <br/><br/>
+            <%= @post.title %>
+            <br/><br/>
+            <%= @post.description %>
+            <br/><br/>
+            <%= @post.tag %>
+          </div>
+        </div>
+    </div>
     
-    <img src="<%= @post.image %>" class= "post-show", style="width: 300px;height:200px;">
-    <br/>
-    <div class="w-100"></div>
-    <div class="col">
-      <p>
-        <strong>Sport name:</strong>
-        <%= @post.sport_name %>
-      </p>
-      
-      <p>
-        <strong>Title:</strong>
-        <%= @post.title %>
-      </p>
-      
-      <p>
+    <div style="width:300px;" class="col-6" >
+        <h6 style="color: white;"><%= @post.comments.count%>Comments</h6>
+        
+        <%= render @post.comments  %>
+        <h2 style="color: white;">
+          <%= @post.user.email.split('@')[0].capitalize  %>
+        </h2>
+        <h3 style="color: white;">Add Comments</h3>
+        <%= render 'comments/form' %>
+      <%= link_to 'Edit', edit_post_path(@post), class:"btn btn-outline-light" %> |
+      <%= link_to 'Back', posts_path, class:"btn btn-outline-light" %>
+    </div>
+  </div>
+</div> 
+
+  <!-- <p>
         <strong>Image:</strong>
         <%= @post.image%>
-      </p>
-      
-      <p>
-        <strong>Description:</strong>
-        <%= @post.description %>
-      </p>
-      
-      <p>
-        <strong>Tag:</strong>
-        <%= @post.tag %>
-      </p>
-      
-      <br/>
-      <p>
-        <h2>
-          <%= @post.comments.count %>
-          Comments
-        </h2>
-        <%= render @post.comments  %>
-        <h3>Add Comments</h3>
-        <%= render 'comments/form' %>
-      </p>
-      
-      <p>
-        <strong>User:</strong>
-        <%= @post.user.email.split('@')[0].capitalize  %>
-      </p>
-      
-    </div>
-  
-  </div>
-
-  <%= link_to 'Edit', edit_post_path(@post), class:"btn btn-outline-light" %> |
-  <%= link_to 'Back', posts_path, class:"btn btn-outline-light" %>
-
-</div> 
+      </p> -->

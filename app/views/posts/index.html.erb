@@ -26,11 +26,14 @@
         <td><%= post.description %></td>
         <td><%= post.tag %></td>
         <td><%= post.user.email.split('@')[0].capitalize %></td>
+
+        
         
         <td><%= link_to 'Show', post, class:"btn btn-light btn-sm" %></td>
+        <% if current_user && current_user.admin %>
         <td><%= link_to 'Edit', edit_post_path(post), class:"btn btn-light btn-sm"%></td>
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-light btn-sm" %></td>
-      
+        <% end %>
       </tr>
 
     <% end %>
@@ -46,8 +49,8 @@
 
 <br>
 
+
 <%= link_to 'New Post', new_post_path , class:"btn btn-light" %>
 
 
 <%= link_to 'Back', root_path, class:"btn btn-outline-light" %>
-

@@ -15,7 +15,11 @@
     <p class="card-text text-white" style="font-size: larger; margin: 20px">
       <strong> <%= @sport.sport_name %> </strong>  |  <strong> <%= @sport.sport_equipement %> </strong>
     </p><br/>
-    
+
+    <!-- <p class="card-text text-white" style="font-size: larger; margin: 20px">
+      <strong> <%= @sport.sport_name %> </strong>  |  <strong> <%= @sport.sport_equipement %> </strong>
+    </p><br/>
+     -->
     <%= link_to 'Back', sports_path ,class:"btn btn-outline-light", style:"margin: 20px" %>
     
     <% if current_user && current_user.admin %>

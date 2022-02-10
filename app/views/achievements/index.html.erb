@@ -1,0 +1,19 @@
+<h1>Achievements</h1>
+
+<table class="responsive nowrap table table-hover" id="dttb-achievements" data-sort="true" data-source="<%= url_for(format: :json)%>">
+  <thead>
+    <tr>
+      <th data-data="player_name">Player name</th>
+      <th data-data="sport_name">Sport name</th>
+      <th data-data="achievement">Achievement</th>
+      <th data-data="captain">Captain</th>
+      <th data-data="gender">Gender</th>
+      <th data-data="url" data-orderable="false" data-class-name="all" data-searchable="false" class="skip-export" width="100px"></th>
+    </tr>
+  </thead>
+
+</table>
+
+<br>
+
+<%= link_to 'New Achievement', new_achievement_path %>

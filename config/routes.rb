@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+  resources :achievements
   resources :posts do
     resources :comments
   end
+  
+  resources :achievements
 
   get '/posts/hashtag/:name', to:'posts#hashtags'
 
