@@ -11,23 +11,31 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field form-group">
-    <%= form.text_field :sport_name, class:"form-control" , placeholder:"sport name" %>
-  </div>
-
-  <div class="field form-group">
-    <%= form.text_area :sport_equipement, class:"form-control" , placeholder:"sport-equipement" %>
-  </div>
-
-  <!-- <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div> -->
-
   <br/>
-  <div class="actions">
-    <%= form.submit class:"btn btn-outline-light" %>
-  </div><br/>
-
+ 
+  <div 
+  style="width: 600px;
+    padding: 30px;
+    box-shadow: 0 8px 8px -4px rgb(32, 45, 165);">
+    
+    <div class="field form-group">
+      <%= form.text_field :sport_name, class:"form-control" , placeholder:"sport name" %>
+    </div><br/>
+  
+    <div class="field form-group">
+      <%= form.text_area :sport_equipement, class:"form-control" , placeholder:"sport-equipement" %>
+    </div>
+  
+    <!-- <div class="field">
+      <%= form.label :user_id %>
+      <%= form.text_field :user_id %>
+    </div> -->
+  
+    <br/>
+    <div class="actions">
+      <%= form.submit class:"btn btn-light" %>
+    </div><br/>
+  
+  </div>
+  
 <% end %>

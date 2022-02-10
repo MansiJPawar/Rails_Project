@@ -11,7 +11,7 @@ class Post < ApplicationRecord
   # end
 
   #carrier wave
-  mount_uploader :image, FileUploader
+  mount_uploader :image, FileUploader, dependent: :destroy
 
 
 

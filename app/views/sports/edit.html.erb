@@ -1,6 +1,14 @@
-<h1 style="color: #fff;">Editing Sport</h1>
 
-<%= render 'form', sport: @sport %>
+<div class="container" style="margin-top: 40px;margin-left: 359px;font-family: Lucida Console, Courier New, monospace;">
+    <h1 style="color: #fff;">Editing Sport</h1>
 
-<%= link_to 'Show', @sport , class:"btn btn-outline-light" %> |
-<%= link_to 'Back', sports_path, class:"btn btn-outline-light" %>
+    <%= render 'form', sport: @sport %>
+    
+    <br/><br/>
+    <%= link_to 'Back', sports_path, class:"btn btn-outline-light" , style:"margin:20px;" %> |
+    <%= link_to 'Show', @sport , class:"btn btn-light" , style:"margin:20px;" %> 
+</div>
+
+
+
+

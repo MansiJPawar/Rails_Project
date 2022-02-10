@@ -28,6 +28,10 @@ class SportsController < ApplicationController
 
     respond_to do |format|
       if @sport.save
+        #mailer 
+        # SportMailer.with(user: current_user,post: @sport).post_created.deliver_later
+        SportMailer.post_created.deliver_later
+
         format.html { redirect_to sport_url(@sport), notice: "Sport was successfully created." }
         format.json { render :show, status: :created, location: @sport }
       else

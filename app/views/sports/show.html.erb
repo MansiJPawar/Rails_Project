@@ -1,19 +1,27 @@
-<div style="width: 18rem;" class="container">
-  <div class="card-body">
-    <h5 class="card-title text-white font-weight-bold">Sport Details</h5>
-    <h6 class="card-subtitle mb-4 text-white">
-      <p>
-        <%= @sport.sport_name %>
-      </p>
-      <p>
-        <%= @sport.sport_equipement %>
-      </p>
-    </h6>
-    <p class="card-text text-white">
-      <strong>User:</strong>
-      <%= @sport.user.username %>
-    </p>
-    <%= link_to 'Edit', edit_sport_path(@sport), class:"btn btn-outline-light" %> |
-    <%= link_to 'Back', sports_path ,class:"btn btn-outline-light" %>
+<div class="container" style="width: 28rem;" >
+
+  <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+  <div class="card-body" 
+  style="margin-top: 40px;
+  padding: 30px;
+  box-shadow: 0 8px 8px -4px rgb(32, 45, 165);
+  font-family: Lucida Console, Courier New, monospace;">
+
+    <h5 class="card-title text-white font-weight-bold" style="font-size: xx-large;">Sport Details</h5>
+    <br/>
+    <p class="card-text text-white font-weight-bold" style="font-size: larger; margin: 20px">
+      <%= @sport.user.email.split('@')[0].capitalize %>
+    </p><br/>
+    <p class="card-text text-white" style="font-size: larger; margin: 20px">
+      <strong> <%= @sport.sport_name %> </strong>  |  <strong> <%= @sport.sport_equipement %> </strong>
+    </p><br/>
+    
+    <%= link_to 'Back', sports_path ,class:"btn btn-outline-light", style:"margin: 20px" %>
+    
+    <% if current_user && current_user.admin %>
+    | <%= link_to 'Edit', edit_sport_path(@sport), class:"btn btn-light" , style:"margin: 20px" %>
+    <% end %>
+    
   </div>
 </div>
+
