@@ -3,10 +3,15 @@
 <div class="container-fluid" style="padding: 50px;margin:0px;">
     <div class="row" style="margin-left:40px;">
 
-      <div class="col-6">
-         <img src="<%= @post.image %>" class= "post-show", style="width: 300px;height:200px;">
-         
-        <div 
+      <div class="col-6" >
+         <!-- <img src="<%= @post.image %>" class= "post-show", style="width: 300px;height:200px;"> -->
+         <% (0...@post.images.count).each do |image| %><br/><br/>
+         <div class="post-show">
+            <%= image_tag(@post.images[image])%>
+         </div>
+         <% end %>
+
+         <div 
         style="
            padding: 20px;
            width:300px;
@@ -29,7 +34,7 @@
     </div>
     
     <div style="width:300px;" class="col-6" >
-        <h6 style="color: white;"><%= @post.comments.count%>Comments</h6>
+        <h6 style="color: white;"><%= @post.comments.count%>  Comments</h6>
         
         <%= render @post.comments  %>
         <h2 style="color: white;">
@@ -37,8 +42,11 @@
         </h2>
         <h3 style="color: white;">Add Comments</h3>
         <%= render 'comments/form' %>
-      <%= link_to 'Edit', edit_post_path(@post), class:"btn btn-outline-light" %> |
-      <%= link_to 'Back', posts_path, class:"btn btn-outline-light" %>
+      
+      <%= link_to 'Back', posts_path, class:"btn btn-outline-light" %> |
+     
+      <%= link_to 'Edit', edit_post_path(@post), class:"btn btn-light" %> 
+  
     </div>
   </div>
 </div> 

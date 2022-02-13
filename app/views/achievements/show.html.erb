@@ -1,26 +1,36 @@
+<div class="container text-white font-weight-bold"
+style="
+   padding: 20px;
+   width:380px;
+   height:320px;
+   color:white;
+   margin-top:25px;
+   box-shadow: 0 8px 8px -4px rgb(32, 45, 165);">
 <p id="notice"><%= notice %></p>
 
+<h1 style="font-size: xx-large;">Achievement Details</h1>
 <p>
-  <strong>Sport name:</strong>
   <%= @achievement.sport_name %>
 </p>
 
 <p>
-  <strong>Achievement:</strong>
   <%= @achievement.achievement %>
 </p>
 
-<%= link_to "View and Download", @achievement.file, download: '' %>
+<%= link_to "View and Download", @achievement.file, download: '' %><br/>
 
+<br/>
 <p>
-  <strong>Captain:</strong>
+  <strong>Captain: </strong>
   <%= @achievement.captain %>
 </p>
 
 <p>
-  <strong>Gender:</strong>
+  <strong>Status: </strong>
   <%= @achievement.gender %>
-</p>
+</p><br/>
 
-<%= link_to 'Edit', edit_achievement_path(@achievement) %> |
-<%= link_to 'Back', achievements_path %>
+<%= link_to 'Edit', edit_achievement_path(@achievement), class:"btn btn-light" %> |
+<%= link_to 'Back', achievements_path , class:"btn btn-outline-light" %>
+
+</div>

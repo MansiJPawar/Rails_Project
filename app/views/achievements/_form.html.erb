@@ -30,6 +30,14 @@
     <%= form.check_box :captain , placeholder:"captain"%>
   </div>
 
+  <% if current_user.admin? %>
+  <div class="field form-group">
+      <%= form.label :gender %>
+      Approve <p><%= form.radio_button :gender, ['Approved'], id:"show" %></p>
+      Reject  <p><%= form.radio_button :gender, ['Rejected'], id:"hide" %></p>
+  </div>  
+  <% end %>
+
   <!-- <div class="field">
     <%= form.label :Gender %>
     male<%= form.radio_button :gender, ['male']%>
@@ -40,3 +48,4 @@
     <%= form.submit class:"btn btn-light" %>
   </div>
 <% end %>
+

@@ -1,10 +1,14 @@
 class Post < ApplicationRecord
+  #validations
+  validates :title, :description, :tag, presence: true
+
   belongs_to :user
   has_many :comments, dependent: :destroy
   has_and_belongs_to_many :tags
   
   #image
-  has_one_attached :image
+  # has_one_attached :image
+  has_many_attached :images
 
   # def thumbnail
   #   return self.image.variant(resize: "100x100")
