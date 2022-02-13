@@ -76,6 +76,11 @@ gem 'sprockets-rails', '~> 3.4', '>= 3.4.2'
 gem 'font-awesome-sass', '~> 5.15.1'
 
 gem 'carrierwave', '~> 2.0'
+
 gem "jquery-datatables", "~> 1.10"
 
 gem "faker", "~> 2.19"
+
+gem 'country_select', '~> 6.0'
+
+gem 'full_country_select'

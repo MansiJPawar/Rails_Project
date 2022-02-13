@@ -1,0 +1,32 @@
+<%= form_with(model: announcement, local: true) do |form| %>
+  <% if announcement.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(announcement.errors.count, "error") %> prohibited this announcement from being saved:</h2>
+
+      <ul>
+      <% announcement.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :announcement_title %>
+    <%= form.text_field :announcement_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_field :content %>
+  </div>
+
+ 
+  <div class="field">
+    <%= form.label :sport %>
+    <%= form.collection_select(:sport_id, Sport.all, :id, :sport_name, { :prompt => 'Select a Sport', :selected => @announcement.sport_id }, { class: 'form-control' }) %>
+  </div>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

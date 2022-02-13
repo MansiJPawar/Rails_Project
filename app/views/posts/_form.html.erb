@@ -8,6 +8,7 @@
         <li><%= message %></li>
       <% end %>
       </ul>
+      
     </div>
   <% end %>
 
@@ -18,12 +19,12 @@
   </div> -->
 
   <div class="field">
-    <%= form.label :sport %>
+    <!-- <%= form.label :sport %> -->
     <%= form.collection_select(:sport_id, Sport.all, :id, :sport_name, { :prompt => 'Select a Sport', :selected => @post.sport_id }, { class: 'form-control' }) %>
   </div>
 
   <div class="field form-group">
-    <i class="far fa-smile-beam"></i>
+    <!-- <i class="far fa-smile-beam"></i> -->
     <!-- <%= form.label :title %> -->
     <%= form.text_field :title, class:"form-control", placeholder:"title" %>
   </div>
@@ -34,7 +35,7 @@
   </div> -->
 
   <div class="field form-group">
-    <%= form.label :image %>
+    <!-- <%= form.label :image %> -->
     <%= form.file_field :image, class:"form-control" %>
   </div>
 

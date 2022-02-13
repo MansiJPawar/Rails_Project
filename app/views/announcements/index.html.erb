@@ -1,0 +1,57 @@
+<h1>Announcements</h1>
+
+<table class="table table-bordered table-striped" id='mysport'>
+  <thead class="table-dark">
+    <tr>
+      <th>Announcement title</th>
+      <th>Content</th>
+      <th>User</th>
+    </tr>
+  </thead>
+    <tbody>
+    <% @announcements.each do |announcement| %>
+      <tr>
+        <td><%= announcement.announcement_title %></td>
+        <td><%= announcement.content %></td>
+        <td><%= announcement.sport_name %></td>
+        <td><%= link_to 'Show', announcement, class:"btn btn-light" %>
+        <%= link_to 'Edit',  edit_announcement_path(announcement), class:"btn btn-light" %>
+        <%= link_to 'Destroy', announcement, class:"btn btn-light", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+
+</table>
+
+<br>
+
+<%= link_to 'New Announcement', new_announcement_path %>
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+<h1>Announcements</h1>
+
+<table class="responsive nowrap table table-hover" id="dttb-announcements" data-sort="true" data-source="<%= url_for(format: :json)%>">
+  <thead>
+    <tr>
+      <th data-data="announcement_title">Announcement title</th>
+      <th data-data="content">Content</th>
+      <th data-data="user">User</th>
+      <th data-data="url" data-orderable="false" data-class-name="all" data-searchable="false" class="skip-export" width="100px"></th>
+    </tr>
+  </thead>
+
+</table>
+
+<br>
+
+<%= link_to 'New Announcement', new_announcement_path %> -->

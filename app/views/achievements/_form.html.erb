@@ -11,37 +11,32 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :player_name %>
-    <%= form.text_field :player_name %>
+  <div class="field form-group">
+    <%= form.collection_select(:sport_id, Sport.all, :id, :sport_name, { :prompt => 'Select a Sport', :selected => @achievement.sport_id }, { class: 'form-control' }) %>
   </div>
 
-  <div class="field">
-    <%= form.label :sport_name %>
-    <%= form.text_field :sport_name %>
+  <div class="field form-group">
+    <!-- <%= form.label :achievement %> -->
+    <%= form.text_area :achievement,class:"form-control" , placeholder:"achievement" %>
   </div>
 
-  <div class="field">
-    <%= form.label :achievement %>
-    <%= form.text_area :achievement %>
+  <div class="field form-group">
+    <!-- <%= form.label :certificate %> -->
+    <%= form.file_field :file,class:"form-control" , placeholder:"certificate" %>
   </div>
 
-  <div class="field">
-    <%= form.label :certificate %>
-    <%= form.file_field :file %>
-  </div>
-
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :captain %>
-    <%= form.check_box :captain %>
+    <%= form.check_box :captain , placeholder:"captain"%>
   </div>
 
-  <div class="field">
-    <%= form.label :gender %>
-    <%= form.check_box :gender %>
-  </div>
+  <!-- <div class="field">
+    <%= form.label :Gender %>
+    male<%= form.radio_button :gender, ['male']%>
+    female<%= form.radio_button :gender, ['female']%>
+  </div> -->
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class:"btn btn-light" %>
   </div>
 <% end %>

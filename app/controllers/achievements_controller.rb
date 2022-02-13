@@ -1,5 +1,6 @@
 class AchievementsController < ApplicationController
   before_action :set_achievement, only: %i[ show edit update destroy ]
+  
 
   # GET /achievements or /achievements.json
   def index
@@ -22,7 +23,7 @@ class AchievementsController < ApplicationController
   # POST /achievements or /achievements.json
   def create
     @achievement = Achievement.new(achievement_params)
-
+    @achievement.user = current_user
     respond_to do |format|
       if @achievement.save
         format.html { redirect_to achievement_url(@achievement), notice: "Achievement was successfully created." }
@@ -65,6 +66,6 @@ class AchievementsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def achievement_params
-      params.require(:achievement).permit(:player_name, :sport_name, :achievement, :captain, :gender, :file)
+      params.require(:achievement).permit(:sport_name, :achievement, :captain, :gender, :file, :sport_id)
     end
 end

@@ -26,12 +26,24 @@
          <li class="nav-item navbar-brand">
            <%= link_to 'Posts', posts_path %>
          </li><br/>
+
+         <div class="dropdown-divider" id="divider1"></div>
+
+         <li class="nav-item navbar-brand">
+            <%= link_to 'Achievements', achievements_path %>
+         </li><br/>
+      
+         <div class="dropdown-divider" id="divider1"></div>
+
+         <li class="nav-item navbar-brand">
+            <%= link_to 'Announcements', achievements_path %>
+         </li><br/>
       
          <div class="dropdown-divider" id="divider1"></div>
 
          <% if current_user %>
             <li class="nav-item navbar-brand">
-               <%= link_to "Edit Account", edit_user_registration_path%>
+               <%= link_to "My Profile", edit_user_registration_path%>
             </li><div class="dropdown-divider" id="divider1"></div>
 
             <li class="nav-item navbar-brand">

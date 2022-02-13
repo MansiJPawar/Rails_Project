@@ -1,5 +1,5 @@
 <div class="container">
-  <h1 class="display-4" style="color: #fff;">Edit <%= resource_name.to_s.humanize %></h1>
+  <h1 class="display-4" style="color: #fff;">My Profile</h1>
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
@@ -41,7 +41,28 @@
   <div class="field form-group">
     <i>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "current-password", class:"form-control" , placeholder:"current password" %>
-  </div>
+  </div><br/>
+ 
+  <div class="field form-group">
+    <%= f.country_select :country, class:"form-control" , placeholder:"country" , class:"btn btn-outline-light"%>
+  </div><br/>
+
+   <div class="field form-group">
+    <%= f.text_field :state, class:"form-control" , placeholder:"state" %>
+  </div><br/>
+
+  <div class="field form-group">
+    <%= f.text_field :city, class:"form-control" , placeholder:"city" %>
+  </div><br/>
+
+  <div class="field form-group">
+    <%= f.text_field :phone_number, class:"form-control" , placeholder:"phone number" %>
+  </div><br/>
+
+  <div class="field">
+    male<%= f.radio_button :gender, ['male']%>
+    female<%= f.radio_button :gender, ['female']%>
+  </div><br/>
 
   <div class="actions">
     <%= f.submit "Update", class:"btn btn-outline-light" %>
