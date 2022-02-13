@@ -32,7 +32,6 @@
 
   <% if current_user.admin? %>
   <div class="field form-group">
-      <%= form.label :gender %>
       Approve <p><%= form.radio_button :gender, ['Approved'], id:"show" %></p>
       Reject  <p><%= form.radio_button :gender, ['Rejected'], id:"hide" %></p>
   </div>  
