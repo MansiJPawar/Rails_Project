@@ -18,7 +18,5 @@ class SportMailer < ApplicationMailer
        bcc: "ravi123@gmail.com", 
        subject: "new sport created"
       )
-    # mail to: "to@example.org"
-
   end
 end

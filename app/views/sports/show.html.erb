@@ -1,6 +1,5 @@
 <div class="container" style="width: 28rem;" >
 
-  <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
   <div class="card-body" 
   style="margin-top: 40px;
   padding: 30px;
@@ -9,17 +8,15 @@
 
     <h5 class="card-title text-white font-weight-bold" style="font-size: xx-large;">Sport Details</h5>
     <br/>
+
     <p class="card-text text-white font-weight-bold" style="font-size: larger; margin: 20px">
       <%= @sport.user.email.split('@')[0].capitalize %>
     </p><br/>
+
     <p class="card-text text-white" style="font-size: larger; margin: 20px">
       <strong> <%= @sport.sport_name %> </strong>  |  <strong> <%= @sport.sport_equipement %> </strong>
     </p><br/>
 
-    <!-- <p class="card-text text-white" style="font-size: larger; margin: 20px">
-      <strong> <%= @sport.sport_name %> </strong>  |  <strong> <%= @sport.sport_equipement %> </strong>
-    </p><br/>
-     -->
     <%= link_to 'Back', sports_path ,class:"btn btn-outline-light", style:"margin: 20px" %>
     
     <% if current_user && current_user.admin %>

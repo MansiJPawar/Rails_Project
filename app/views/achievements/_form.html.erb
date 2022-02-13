@@ -16,12 +16,10 @@
   </div>
 
   <div class="field form-group">
-    <!-- <%= form.label :achievement %> -->
     <%= form.text_area :achievement,class:"form-control" , placeholder:"achievement" %>
   </div>
 
   <div class="field form-group">
-    <!-- <%= form.label :certificate %> -->
     <%= form.file_field :file,class:"form-control" , placeholder:"certificate" %>
   </div>
 
@@ -36,12 +34,6 @@
       Reject  <p><%= form.radio_button :gender, ['Rejected'], id:"hide" %></p>
   </div>  
   <% end %>
-
-  <!-- <div class="field">
-    <%= form.label :Gender %>
-    male<%= form.radio_button :gender, ['male']%>
-    female<%= form.radio_button :gender, ['female']%>
-  </div> -->
 
   <div class="actions">
     <%= form.submit class:"btn btn-light" %>

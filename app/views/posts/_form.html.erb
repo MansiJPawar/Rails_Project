@@ -19,40 +19,24 @@
   </div> -->
 
   <div class="field">
-    <!-- <%= form.label :sport %> -->
     <%= form.collection_select(:sport_id, Sport.all, :id, :sport_name, { :prompt => 'Select a Sport', :selected => @post.sport_id }, { class: 'form-control' }) %>
   </div>
 
   <div class="field form-group">
-    <!-- <i class="far fa-smile-beam"></i> -->
-    <!-- <%= form.label :title %> -->
     <%= form.text_field :title, class:"form-control", placeholder:"title" %>
   </div>
 
-  <!-- <div class="field form-group">
-    <%= form.label :image %>
-    <%= form.file_field :image %>
-  </div> -->
-
   <div class="field form-group">
-    <!-- <%= form.label :image %> -->
     <%= form.file_field :images, multiple: true, class:"form-control" %>
   </div>
 
   <div class="field form-group">
-    <!-- <%= form.label :description %> -->
     <%= form.text_area :description, class:"form-control", placeholder:"description" %>
   </div>
 
   <div class="field form-group">
-    <!-- <%= form.label :tag %> -->
     <%= form.text_field :tag , class:"form-control", placeholder:"add your hashtags"%>
   </div>
-<!-- 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div> -->
 
   <div class="actions">
     <%= form.submit class:"btn btn-outline-light" %>

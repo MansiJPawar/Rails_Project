@@ -1,5 +1,5 @@
 <p style="color: #fff;">Welcome <%= @email %>!</p>
 
-<p style="color: #fff;">You can confirm your account email through the link below:</p>
+<p style="color: #fff;">Confirm your account email through the link below:</p>
 
 <p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>

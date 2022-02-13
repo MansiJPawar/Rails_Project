@@ -7,12 +7,7 @@ class Post < ApplicationRecord
   has_and_belongs_to_many :tags
   
   #image
-  # has_one_attached :image
   has_many_attached :images
-
-  # def thumbnail
-  #   return self.image.variant(resize: "100x100")
-  # end
 
   #carrier wave
   mount_uploader :image, FileUploader, dependent: :destroy

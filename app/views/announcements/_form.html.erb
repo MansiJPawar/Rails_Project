@@ -11,22 +11,19 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :announcement_title %>
-    <%= form.text_field :announcement_title %>
+  <div class="field form-group">
+    <%= form.text_field :announcement_title, class:"form-control" , placeholder:"announcement title"%>
   </div>
 
-  <div class="field">
-    <%= form.label :content %>
-    <%= form.text_field :content %>
+  <div class="field form-group">
+    <%= form.text_field :content,class:"form-control" , placeholder:"content" %>
   </div>
-
  
-  <div class="field">
-    <%= form.label :sport %>
+  <div class="field form-group">
     <%= form.collection_select(:sport_id, Sport.all, :id, :sport_name, { :prompt => 'Select a Sport', :selected => @announcement.sport_id }, { class: 'form-control' }) %>
   </div>
-  <div class="actions">
-    <%= form.submit %>
+
+  <div class="actions form-group">
+    <%= form.submit class:"btn btn-light" %>
   </div>
 <% end %>

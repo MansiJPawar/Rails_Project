@@ -9,5 +9,6 @@ class AnnounceMailer < ApplicationMailer
     @greeting = "Hi"
 
     mail to: User.where(sport_id:3).pluck(:email)
+    
   end
 end
