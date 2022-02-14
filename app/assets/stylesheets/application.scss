@@ -34,6 +34,10 @@ img.post-show {
   height: auto;
 }
 
+#div-margin {
+  margin: 20px; 
+}
+
 #head-text-color {
   color: #fff;
 }
@@ -69,4 +73,53 @@ img.post-show {
   color:white;
   margin-top:25px;
   box-shadow: 0 8px 8px -4px rgb(32, 45, 165);
+}
+
+#font-text {
+  margin-top: 40px;
+  margin-left: 359px;
+  font-family: Lucida Console, Courier New, monospace;
+}
+
+#just-font {
+  font-family: Lucida Console, Courier New, monospace;
+}
+
+#head5 {
+  font-size: xx-large;
+}
+
+#p1 {
+  font-size: larger;
+}
+
+#div2 {
+  padding: 50px;
+  margin:0px;
+}
+
+#div3 {
+  margin-left:40px;
+}
+
+#div4 {
+  width:300px;
+}
+
+#div5 {
+  margin-bottom: 30px;
+  margin-left:25px;
+}
+
+#div6 {
+  text-align: center; 
+  margin-right:20px;
+}
+
+#div7 {
+  margin-left: 22px;
+}
+
+#dash {
+  margin: 20px 0px 60px 65px;
 }

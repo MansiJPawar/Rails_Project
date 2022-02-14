@@ -4,15 +4,15 @@
 
 <h5 class="card-title text-white font-weight-bold" style="font-size: xx-large;">Announcement Details</h5>
 
-<p class="card-text text-white font-weight-bold" style="font-size: larger; margin: 20px">
+<p class="card-text text-white font-weight-bold" style="font-size: larger;", id="div-margin">
   <%= @announcement.announcement_title %>
 </p>
 
-<p class="card-text text-white font-weight-bold" style="font-size: larger; margin: 20px">
+<p class="card-text text-white font-weight-bold" style="font-size: larger;", id="div-margin">
   <%= @announcement.content %>
 </p>
 
 <%= link_to 'Edit', edit_announcement_path(@announcement), class:"btn btn-light" , style:"margin:20px" %> |
-<%= link_to 'Back', announcements_path, class:"btn btn-outline-light", style:"margin:20px"  %>
+<%= link_to 'Back', announcements_path, class:"btn btn-outline-light", id="div-margin" %>
 
 </div>

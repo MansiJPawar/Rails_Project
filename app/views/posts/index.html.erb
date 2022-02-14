@@ -2,7 +2,6 @@
 
 <h1 id="head-text-color">Posts</h1>
 
-
 <table id='mysport' class="table table-striped table-bordered table-hover text-white font-weight-bold">
   <thead class="thead-dark"> 
     <tr>
@@ -23,7 +22,7 @@
       <tr>
         <!-- <td><img src="<%= post.image %>"></td> -->
         <td><%= post.sport.sport_name %></td>
-        <td><%= link_to post.title, post , id:"head-text-color"%></td>
+        <td><%= link_to post.title, sport_post , id:"head-text-color"%></td>
         <td><img src="<%= post.image %>" class= "post-show"></td>
         <td><%= post.description %></td>
         <td><%= post.tag %></td>
@@ -31,7 +30,8 @@
 
         <% if current_user && current_user.admin %>
 
-        <td><%= link_to 'Edit', edit_post_path(post), class:"btn btn-light btn-sm"%></td>
+        <td><%= link_to 'Edit', edit_sport_post_path(post), class:"btn btn-light btn-sm"%></td>
+        
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-light btn-sm" %></td>
         <% end %>
       </tr>
@@ -39,5 +39,5 @@
   </tbody>
 </table>
 
-<%= link_to 'New Post', new_post_path , class:"btn btn-light" %>
+<%= link_to 'New Post', new_sport_post_path , class:"btn btn-light" %>
 <%= link_to 'Back', root_path, class:"btn btn-outline-light" %>

@@ -1,10 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<div class="container-fluid" style="padding: 50px;margin:0px;">
-    <div class="row" style="margin-left:40px;">
+<div class="container-fluid" id="div2">
+    <div class="row" id="div3">
 
       <div class="col-6" >
-         <!-- <img src="<%= @post.image %>" class= "post-show", style="width: 300px;height:200px;"> -->
          <% (0...@post.images.count).each do |image| %><br/><br/>
          <div class="post-show">
             <%= image_tag(@post.images[image])%>
@@ -12,7 +11,7 @@
          <% end %>
 
          <div id="show-box-post">
-          <div style="margin-bottom: 30px;margin-left:25px;">
+          <div id="div5">
             <%= @post.sport.sport_name %>
             <br/><br/>
             <%= @post.title %>
@@ -24,7 +23,7 @@
         </div>
     </div>
     
-    <div style="width:300px;" class="col-6" >
+    <div id="div4" class="col-6" >
         <h6 id="head-text-color"><%= @post.comments.count%>  Comments</h6>
         
         <%= render @post.comments  %>
@@ -36,7 +35,7 @@
       
       <%= link_to 'Back', posts_path, class:"btn btn-outline-light" %> |
      
-      <%= link_to 'Edit', edit_post_path(@post), class:"btn btn-light" %> 
+      <%= link_to 'Edit', edit_sport_post_path(@post), class:"btn btn-light" %> 
   
     </div>
   </div>

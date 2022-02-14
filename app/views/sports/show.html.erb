@@ -2,21 +2,21 @@
 
   <div class="card-body" id="show-box">
 
-    <h5 class="card-title text-white font-weight-bold" style="font-size: xx-large;">Sport Details</h5>
+    <h5 class="card-title text-white font-weight-bold" id="head5">Sport Details</h5>
     <br/>
 
-    <p class="card-text text-white font-weight-bold" style="font-size: larger; margin: 20px">
+    <p class="card-text text-white font-weight-bold" id="div-margin" id="p1">
       <%= @sport.user.email.split('@')[0].capitalize %>
     </p><br/>
 
-    <p class="card-text text-white" style="font-size: larger; margin: 20px">
+    <p class="card-text text-white" id="p1" id="div-margin">
       <strong> <%= @sport.sport_name %> </strong>  |  <strong> <%= @sport.sport_equipement %> </strong>
     </p><br/>
 
-    <%= link_to 'Back', sports_path ,class:"btn btn-outline-light", style:"margin: 20px" %>
+    <%= link_to 'Back', sports_path ,class:"btn btn-outline-light", id="div-margin" %>
     
     <% if current_user && current_user.admin %>
-    | <%= link_to 'Edit', edit_sport_path(@sport), class:"btn btn-light" , style:"margin: 20px" %>
+    | <%= link_to 'Edit', edit_sport_path(@sport), class:"btn btn-light" , id="div-margin" %>
     <% end %>
     
   </div>
