@@ -7,6 +7,14 @@ class User < ApplicationRecord
   def username
       return self.email.split('@')[0].capitalize     
   end
+
+  #association
+  has_many :achievements
+  has_many :announcements
+  has_many :comments
+  has_many :posts
+
+  #avatar
   has_one_attached :avatar
   
   after_commit :add_default_avatar, on: %i[create update]

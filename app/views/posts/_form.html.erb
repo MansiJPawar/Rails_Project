@@ -18,7 +18,7 @@
     
   </div> -->
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.collection_select(:sport_id, Sport.all, :id, :sport_name, { :prompt => 'Select a Sport', :selected => @post.sport_id }, { class: 'form-control' }) %>
   </div>
 
