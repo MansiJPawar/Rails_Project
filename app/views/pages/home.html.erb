@@ -1,8 +1,7 @@
 <div class="vertical-nav bg-dark text-white" id="sidebar">
-   
-      <!-- my sport section -->
+   <!-- my sport section -->
    <div class="py-4 bg-dark">
-      <h1 style="margin-left: 60px;">Sport</h1>  
+     <h1 style="margin-left: 60px;">Sport</h1>  
    </div>
 
    <p class="text-gray font-weight-bold text-uppercase" style="margin: 20px 0px 60px 65px;">Dashboard</p>
@@ -32,13 +31,16 @@
          <li class="nav-item navbar-brand">
             <%= link_to 'Achievements', achievements_path %>
          </li><br/>
-      
+
+         <% if current_user && current_user.admin %>
+
          <div class="dropdown-divider" id="divider1"></div>
 
          <li class="nav-item navbar-brand">
             <%= link_to 'Announcements', announcements_path %>
          </li><br/>
-      
+         <% end %>
+
          <div class="dropdown-divider" id="divider1"></div>
 
          <% if current_user %>
@@ -64,30 +66,32 @@
    </div>
 </div>
 
-         <!-- end vertical navbar -->
+   <!-- end vertical navbar -->
 
-         <!-- page content holder -->
+   <!-- page content holder -->
 
 <div class="page-content" id="content">
-         <!-- toggle button -->
-      <button id="sidebarCollapse" type="button" class="btn btn-light bg-dark shadow-sm px-3 mb-3">
-         <i class="fa-thin fa-chart-simple-horizontal mr-1"></i>
-         <small class="text-uppercase font-weight-bold text-white">Menu</small>
-      </button>
+   <!-- toggle button -->
+   <button id="sidebarCollapse" type="button" class="btn btn-light bg-dark shadow-sm px-3 mb-3">
+     <i class="fa-thin fa-chart-simple-horizontal mr-1"></i>
+     <small class="text-uppercase font-weight-bold text-white">Menu</small>
+   </button>
 
-   <div class="separater"></div>
-      <div class="row text-white">
-         <div class="col-lg-5">
-            <div class="lead" id="col-txt">
-               <p>Community</p>
-               <p>for sport enthusiast.</p>
-               <p> Join In</p>
+  <div class="separater"></div>
+     <div class="row text-white">
+        <div class="col-lg-5">
+           <div class="lead" id="col-txt">
+              <p>Community</p>
+              <p>for sport enthusiast.</p>
+              <p> Join In</p>
             </div>
          </div>
-   <div class="col-lg-7">
+  
+      <div class="col-lg-7">
+
       <p class="lead">
-         <div class="gify">
-            <iframe src="https://giphy.com/embed/WlJnnlbnApNCM" 
+        <div class="gify">
+          <iframe src="https://giphy.com/embed/WlJnnlbnApNCM" 
             width="100%" 
             height="70%" 
             style="position:absolute" 

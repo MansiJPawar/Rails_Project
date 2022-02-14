@@ -20,3 +20,9 @@
 //= require toggle
 //= require_tree .
 
+
+// loads datatables
+  $(document).ready(function(){
+    $("#mysport").DataTable({})
+  });
+

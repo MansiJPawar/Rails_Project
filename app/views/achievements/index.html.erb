@@ -20,10 +20,12 @@
         <td><%= achievement.captain %></td>
         <!-- <td><%= achievement.gender %></td> -->
         <td><%= link_to 'Show', achievement, class:"btn btn-light" %>
+        
         <% if current_user && current_user.admin %>
        
-        <%= link_to 'Edit',  edit_achievement_path(achievement), class:"btn btn-light" %>
-        <%= link_to 'Destroy', achievement, class:"btn btn-light", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <%= link_to 'Edit',  edit_achievement_path(achievement), class:"btn btn-light" %>
+          <%= link_to 'Destroy', achievement, class:"btn btn-light", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        
         <% end %>
       </tr>
     <% end %>

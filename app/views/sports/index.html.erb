@@ -4,12 +4,14 @@
 
 <h1 style="color: #fff;">Sports</h1>
 
-<table class="table table-striped table-bordered table-hover text-white font-weight-bold">
+<table id='mysport' class="table table-striped table-bordered table-hover text-white font-weight-bold">
   <thead class="thead-dark"> 
     <tr>
       <th>Sport name</th>
       <th>Sport equipement</th>
+      <% if current_user && current_user.admin %>
       <th colspan="3"></th>
+      <% end %>
     </tr>
   </thead>
 
@@ -18,8 +20,8 @@
       <tr>
         <td><%= sport.sport_name %></td>
         <td><%= sport.sport_equipement %></td>
-        <td><%= link_to 'Show', sport, class:"btn btn-light btn-sm"%></td>
         <% if current_user && current_user.admin %>
+        <td><%= link_to 'Show', sport, class:"btn btn-light btn-sm"%></td>
         <td><%= link_to 'Edit', edit_sport_path(sport), class:"btn btn-light btn-sm" %></td>
         <td><%= link_to 'Destroy', sport, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-light btn-sm" %></td>
         <% end %>

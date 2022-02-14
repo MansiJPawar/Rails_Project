@@ -1,10 +1,12 @@
 <h4><%= comment.name %></h4>
 <h5><%= comment.body %></h5>
 
-<h6>posted <%= time_ago_in_words(comment.created_at) %></h6>
-<br/>
+<h6>posted <%= time_ago_in_words(comment.created_at) %></h6><br/>
+
 <% if current_user && current_user.admin %>
-<p><br/>
- <%= link_to "Delete",[comment.post,comment], method: :delete, data: { confirm: 'Are you Sure'} ,class:"btn btn-outline-light" %>
-</p>
+
+  <p><br/>
+    <%= link_to "Delete",[comment.post,comment], method: :delete, data: { confirm: 'Are you Sure'} ,class:"btn btn-outline-light" %>
+  </p>
+
 <% end %>

@@ -22,32 +22,6 @@
     <% end %>
   </tbody>
 
-</table>
-
-<br>
-
+</table><br>
 <%= link_to 'New Announcement', new_announcement_path, class:"btn btn-light" %>
-
-
-
-
-
-<!-- 
-
-<h1>Announcements</h1>
-
-<table class="responsive nowrap table table-hover" id="dttb-announcements" data-sort="true" data-source="<%= url_for(format: :json)%>">
-  <thead>
-    <tr>
-      <th data-data="announcement_title">Announcement title</th>
-      <th data-data="content">Content</th>
-      <th data-data="user">User</th>
-      <th data-data="url" data-orderable="false" data-class-name="all" data-searchable="false" class="skip-export" width="100px"></th>
-    </tr>
-  </thead>
-
-</table>
-
-<br>
-
-<%= link_to 'New Announcement', new_announcement_path %> -->
+<%= link_to 'Back', root_path, class:"btn btn-outline-light", style:"margin:20px"  %>
