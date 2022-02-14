@@ -25,13 +25,13 @@
     </div>
     
     <div style="width:300px;" class="col-6" >
-        <h6 style="color: white;"><%= @post.comments.count%>  Comments</h6>
+        <h6 id="head-text-color"><%= @post.comments.count%>  Comments</h6>
         
         <%= render @post.comments  %>
-        <h2 style="color: white;">
+        <h2 id="head-text-color">
           <%= @post.user.email.split('@')[0].capitalize  %>
         </h2>
-        <h3 style="color: white;">Add Comments</h3>
+        <h3 id="head-text-color">Add Comments</h3>
         <%= render 'comments/form' %>
       
       <%= link_to 'Back', posts_path, class:"btn btn-outline-light" %> |
