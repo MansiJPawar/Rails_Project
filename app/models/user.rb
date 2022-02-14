@@ -8,6 +8,9 @@ class User < ApplicationRecord
       return self.email.split('@')[0].capitalize     
   end
 
+  #validation
+  validates :email, format: { with: Devise.email_regexp }
+
   #association
   has_many :achievements
   has_many :announcements

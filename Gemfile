@@ -84,3 +84,7 @@ gem "faker", "~> 2.19"
 gem 'country_select', '~> 6.0'
 
 gem 'full_country_select'
+
+gem 'client_side_validations'
+
+gem "select2-rails"
