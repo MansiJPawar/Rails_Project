@@ -9,8 +9,12 @@ class User < ApplicationRecord
   end
 
   #validation
-  validates :email, format: { with: Devise.email_regexp }
+  # validates :email, format: { with: Devise.email_regexp }
+  # validates_presence_of :email, :state, :country, :phone_number, :gender
+  # validates_uniqueness_of :email
+  # validates_uniqueness_of :phone_number, numericality: { only_integer: true}, presence: true, length: { is: 9 }
 
+  
   #association
   has_many :achievements
   has_many :announcements

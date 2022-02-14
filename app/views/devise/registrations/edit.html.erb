@@ -1,6 +1,6 @@
 <div class="container" id="myform">
   <h1 class="display-4" id="head-text-color">My Profile</h1>
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put , id: "regValidate" }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
     <!-- avatar -->
@@ -11,6 +11,7 @@
     <div class="field form-group"> 
       <%= f.file_field :avatar , class:"btn btn-outline-light"%>
     </div>
+    
     <!-- avatar -->
 
   <p class="lead">

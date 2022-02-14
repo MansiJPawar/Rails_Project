@@ -88,3 +88,5 @@ gem 'full_country_select'
 gem 'client_side_validations'
 
 gem "select2-rails"
+
+gem 'jquery-validation-rails'

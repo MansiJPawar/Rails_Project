@@ -5,5 +5,6 @@ class Sport < ApplicationRecord
   #associations
   belongs_to :user
   has_many :announcements
-
+  has_many :post
+  
 end
