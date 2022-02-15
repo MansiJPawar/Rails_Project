@@ -5,14 +5,14 @@ class CommentsController < ApplicationController
   #creates comments for a post
     def create
       @comment = @post.comments.create(params[:comment].permit(:name, :body, :sport_id))
-      redirect_to sport_post_path(@sport,@post)
+      redirect_to sport_posts_path(@sport, @post)
     end
     
     #delete comment
     def destroy
       @comment = @post.comments.find(params[:id])
       @comment.destroy
-      redirect_to sport_post_path(@sport,@post)
+      redirect_to sport_posts_path(@sport, @post)
     end
 
     private

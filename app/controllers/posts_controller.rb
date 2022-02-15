@@ -1,8 +1,8 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!, except: [ :show, :index ]
   before_action :set_sport
   before_action :set_post, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!, except: [ :show, :index ]
-
+  
   # GET /posts or /posts.json
   def index
     @posts = @sport.posts
@@ -33,7 +33,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to sport_post_path(@sport,@post), notice: "Post was successfully created." }
+        format.html { redirect_to sport_posts_path(@sport,@post), notice: "Post was successfully created." }
         format.json { render :show, status: :created, location: @post }
       else
         format.html { render :new, status: :unprocessable_entity }

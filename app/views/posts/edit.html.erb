@@ -3,6 +3,6 @@
 
 <%= render 'form', post: @post %>
 
-<%= link_to 'Show',  sport_post_path, class:"btn btn-outline-light" %> |
-<%= link_to 'Back', sport_posts_path, class:"btn btn-outline-light" %>
+<%= link_to 'Show', [@sport, @post], class:"btn btn-outline-light" %> |
+<%= link_to 'Back', sport_posts_path(@sport), class:"btn btn-outline-light" %>
 

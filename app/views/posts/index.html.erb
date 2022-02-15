@@ -30,7 +30,7 @@
 
         <% if current_user && current_user.admin %>
 
-        <td><%= link_to 'Edit', edit_sport_post_path(@sport.id, post.id), class:"btn btn-light btn-sm"%></td>
+        <td><%= link_to 'Edit Post', edit_sport_post_path(@sport.id, post.id), class:"btn btn-light btn-sm"%></td>
         
         <td><%= link_to 'Destroy', sport_post_path(@sport.id, post.id), method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-light btn-sm" %></td>
         <% end %>
