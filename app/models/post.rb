@@ -4,9 +4,10 @@ class Post < ApplicationRecord
 
   belongs_to :user
   has_many :comments, dependent: :destroy
-  has_and_belongs_to_many :tags
   belongs_to :sport
-  
+  has_and_belongs_to_many :tags, dependent: :destroy
+
+
   #image
   has_many_attached :images
 

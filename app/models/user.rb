@@ -19,7 +19,7 @@ class User < ApplicationRecord
   has_many :achievements
   has_many :announcements
   has_many :comments
-  has_many :posts
+  has_many :posts, dependent: :destroy
 
   #avatar
   has_one_attached :avatar

@@ -1,6 +1,8 @@
-<%= form_for([@post,@post.comments.build]) do |f| %>
+<%= form_for([@sport,@post,@post.comments.build]) do |f| %>
  <br/>
   <p>
+    <%= f.hidden_field(:comment, :sport_id) %>
+    <%= f.hidden_field(:comment, :post_id) %>
     <%= f.text_area :body, class:"form-control", placeholder:"comment here" %>
   </p><br/>
 
