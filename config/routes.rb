@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :announcements
+  #resources :announcements
   resources :achievements
 
   get '/posts/hashtag/:name', to:'posts#hashtags'
@@ -8,6 +8,10 @@ Rails.application.routes.draw do
     resources :posts do
       resources :comments
     end
+  end
+
+  resources :sports do
+    resources :announcements
   end
 
   root to: 'pages#home'

@@ -2,5 +2,5 @@
 
 <%= render 'form', announcement: @announcement %>
 
-<%= link_to 'Show', @announcement, class:"btn btn-light"%> |
-<%= link_to 'Back', announcements_path, class:"btn btn-outline-light" %>
+<%= link_to 'Show', [@sport, @announcement], class:"btn btn-light"%> |
+<%= link_to 'Back', sport_announcements_path(@sport), class:"btn btn-outline-light" %>

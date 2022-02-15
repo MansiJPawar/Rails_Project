@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_15_073421) do
+ActiveRecord::Schema.define(version: 2022_02_15_093130) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -90,7 +90,9 @@ ActiveRecord::Schema.define(version: 2022_02_15_073421) do
   create_table "posts_tags", id: false, force: :cascade do |t|
     t.bigint "post_id"
     t.bigint "tag_id"
+    t.integer "sport_id"
     t.index ["post_id"], name: "index_posts_tags_on_post_id"
+    t.index ["sport_id"], name: "index_posts_tags_on_sport_id"
     t.index ["tag_id"], name: "index_posts_tags_on_tag_id"
   end
 

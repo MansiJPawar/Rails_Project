@@ -6,7 +6,7 @@
 <% if current_user && current_user.admin %>
 
   <p><br/>
-    <%= link_to "Delete",[comment.post,comment], method: :delete, data: { confirm: 'Are you Sure'} ,class:"btn btn-outline-light" %>
+    <%= link_to "Delete",[comment.post.sport,comment.post], method: :delete, data: { confirm: 'Are you Sure'} ,class:"btn btn-outline-light" %>
   </p>
 
 <% end %>

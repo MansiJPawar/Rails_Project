@@ -15,13 +15,13 @@
         <td><%= announcement.announcement_title %></td>
         <td><%= announcement.content %></td>
         <!-- <td><%= announcement.sport_name %></td> -->
-        <td><%= link_to 'Show', announcement, class:"btn btn-light" %>
-        <%= link_to 'Edit',  edit_announcement_path(announcement), class:"btn btn-light" %>
-        <%= link_to 'Destroy', announcement, class:"btn btn-light", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show Sport', [@sport], class:"btn btn-light" %>
+        <%= link_to 'Edit Announcement', edit_sport_announcement_path(@sport, announcement), class:"btn btn-light" %>
+        <%= link_to 'Destroy Announcement', [@sport, announcement], class:"btn btn-light", method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 
 </table><br>
-<%= link_to 'New Announcement', new_announcement_path, class:"btn btn-light" %>
-<%= link_to 'Back', root_path, class:"btn btn-outline-light", id="div-margin"  %>
+<%= link_to 'New Announcement', new_sport_announcement_path(@sport), class:"btn btn-light" %>
+<%# <%= link_to 'Back', sport_announcements_path(@sport), class:"btn btn-outline-light", id="div-margin"  %>

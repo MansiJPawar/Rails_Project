@@ -21,7 +21,7 @@ class CommentsController < ApplicationController
         @sport = Sport.find(params[:sport_id])
       end
 
-       #to get sport object#nested route
+       #to get post object #nested route
       def set_post
         @post = @sport.posts.find(params[:post_id])
       end
