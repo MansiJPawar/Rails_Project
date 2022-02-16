@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  #resources :announcements
   resources :achievements
 
   get '/posts/hashtag/:name', to:'posts#hashtags'
@@ -15,6 +14,7 @@ Rails.application.routes.draw do
   end
 
   root to: 'pages#home'
+
   devise_for :users , :controllers => {registrations: 'registrations'}
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

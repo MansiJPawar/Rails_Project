@@ -1,6 +1,6 @@
 class Post < ApplicationRecord
   #validations
-  validates :title, :description, :tag, presence: true
+  validates :description, :tag, presence: true
 
   belongs_to :user
   has_many :comments, dependent: :destroy

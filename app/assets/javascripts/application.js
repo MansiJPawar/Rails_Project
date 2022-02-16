@@ -13,7 +13,6 @@
 //= require rails-ujs
 //= require jquery3
 //= require jquery.validate
-//= require jsvalidation
 //= require select2-full
 //= require popper
 //= require bootstrap-sprockets
@@ -28,4 +27,3 @@
   $(document).ready(function(){
     $("#mysport").DataTable({})
   });
-
