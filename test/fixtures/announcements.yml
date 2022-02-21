@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  subject: MyString
+  notice: MyText
+  sport: one
+
+two:
+  subject: MyString
+  notice: MyText
+  sport: two
