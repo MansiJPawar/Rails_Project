@@ -77,4 +77,5 @@ class PostsController < ApplicationController
     def per_pag
       @per_page ||= params[:per_page] || 5
     end
+    
   end

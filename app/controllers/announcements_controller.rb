@@ -5,7 +5,7 @@ class AnnouncementsController < ApplicationController
       
   # This action fetch all the announcements of sport
   def index
-    announcements = @sport.announcements.all
+    announcements = @sport.announcements.all(page).per(per_page)
     render_success 200, true, 'announcements fetched successfully', announcements.as_json
   end
     

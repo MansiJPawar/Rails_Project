@@ -4,7 +4,7 @@ before_action :set_sport, only: [:update, :show, :destroy]
    
   # GET /sports
   def index
-    @sports = Sport.all
+    @sports = Sport.all(page).per(per_page)
     render_success 200, true, 'Sports fetched successfully', @sports.as_json 
   end
    
@@ -61,5 +61,13 @@ before_action :set_sport, only: [:update, :show, :destroy]
   # Only allow a trusted parameter "white list" through.
   def sport_params
     params.require(:sport).permit(:name,:equipement)
+  end
+
+  def page
+    @page ||= params[:page] || 1
+  end
+  
+  def per_pag
+    @per_page ||= params[:per_page] || 5
   end
 end

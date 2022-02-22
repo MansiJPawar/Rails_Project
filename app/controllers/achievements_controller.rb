@@ -3,7 +3,7 @@ class AchievementsController < ApplicationController
 
   # GET /achievements
   def index
-    @achievements = Achievement.all
+    @achievements = Achievement.all(page).per(per_page)
     render json: @achievements
   end
   
