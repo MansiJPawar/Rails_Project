@@ -35,6 +35,7 @@ class AchievementsController < ApplicationController
   # DELETE /achievements/1
   def destroy
     @achievement.destroy
+    render_success 200, true, 'Achievement deleted successfully', {}
   end
   
   private
