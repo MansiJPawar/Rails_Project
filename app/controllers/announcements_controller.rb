@@ -1,11 +1,11 @@
 class AnnouncementsController < ApplicationController
-  #before_action :authenticate_user!
+  before_action :authenticate_user!
   before_action :set_sport
   before_action :set_announcement, only: [:update, :show, :destroy]
       
   # This action fetch all the announcements of sport
   def index
-    announcements = @sport.announcements
+    announcements = @sport.announcements.all
     render_success 200, true, 'announcements fetched successfully', announcements.as_json
   end
     

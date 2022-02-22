@@ -7,7 +7,7 @@ class ApplicationController < ActionController::API
   end
 
   protected 
-    ## Return Success Response
+    # Return Success Response
     def render_success code, status, message, data = {}
       render json: {
         code: code,
