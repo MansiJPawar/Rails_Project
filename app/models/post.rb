@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-  #association
+  #Association
   belongs_to :sport
 
   #Validations
