@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_action :set_sport
   before_action :set_post, only: [:update, :show, :destroy]
     
-    # This action fetch all the posts of sport
+  # This action fetch all the posts of sport
   def index
     posts = @sport.posts(page).per(per_page)
     render_success 200, true, 'Posts fetched successfully', posts.as_json 
@@ -12,17 +12,16 @@ class PostsController < ApplicationController
   # this action lets us create a new post
   def create
     post = @sport.posts.new(post_params)
-  
-    if post.save
-      render_success 200, true, 'Post created successfully', post.as_json
-    else
-      if post.errors
-        errors = post.errors.full_messages.join(", ")
+      if post.save
+        render_success 200, true, 'Post created successfully', post.as_json
       else
-        errors = 'Post creation failed'
+        if post.errors
+          errors = post.errors.full_messages.join(", ")
+        else
+          errors = 'Post creation failed'
+        end
+          return_error 500, false, errors, {}
       end
-        return_error 500, false, errors, {}
-    end
   end
   
   # Update post API
@@ -63,10 +62,9 @@ class PostsController < ApplicationController
       params.require(:post).permit(:caption,:sport_id,:user_id)
     end
   
-    ## Set post Object, Return Error if not found
+    #Set post Object, Return Error if not found
     def set_post
       @post = @sport.posts.where(id: params[:id]).first
-  
       unless @post
         return return_error 404, false, 'Post not found', {}
       end

@@ -3,12 +3,12 @@ Rails.application.routes.draw do
     registrations: 'registrations', sessions: 'sessions'
   }
 
-  resources :sports do
-    resources :posts
-  end
-
-  resources :sports do
-    resources :announcements
+  devise_scope :user do
+    resources :sports do
+      resources :posts
+      resources :announcements
+    end
+      resources :achievements
   end
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

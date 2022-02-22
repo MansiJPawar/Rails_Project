@@ -42,8 +42,7 @@ class ApplicationController < ActionController::API
           
     ## Set Product & Return ERROR if not found
     def set_sport
-      @sport = Sport.where(id: params[:sport_id]).first
-          
+      @sport = Sport.where(id: params[:sport_id]).first   
       unless @sport
         return return_error 404, false, 'Product not found', {}
       end

@@ -1,5 +1,5 @@
 class AchievementsController < ApplicationController
-before_action :set_achievement, only: [:update, :show, :destroy]
+  before_action :set_achievement, only: [:update, :show, :destroy]
 
   # GET /achievements
   def index
@@ -45,6 +45,6 @@ before_action :set_achievement, only: [:update, :show, :destroy]
   
     # Only allow a trusted parameter "white list" through.
     def achievement_params
-      params.require(:achievement).permit(:title, :detail)
+      params.require(:achievement).permit(:title, :detail, :user_id)
     end
 end

@@ -11,8 +11,7 @@ class AnnouncementsController < ApplicationController
     
   # this action lets us create a new announcement
   def create
-    announcement = @sport.announcements.new(announcement_params)
-    
+    announcement = @sport.announcements.new(announcement_params) 
     if announcement.save
       render_success 200, true, 'announcement created successfully', announcement.as_json
     else
@@ -35,7 +34,6 @@ class AnnouncementsController < ApplicationController
       else
         errors = 'announcement update failed'
       end
-    
       return_error 500, false, errors, {}
     end
   end
@@ -48,14 +46,12 @@ class AnnouncementsController < ApplicationController
   # Delete an announcement API
   def destroy
     @announcement.destroy
-    
     render_success 200, true, 'announcement deleted successfully', {}
   end
   
   private
     def set_sport
       @sport = Sport.where(id: params[:sport_id]).first
-        
         unless @sport
           return return_error 404, false, 'Product not found', {}
         end
@@ -65,7 +61,6 @@ class AnnouncementsController < ApplicationController
     def announcement_params
       params.require(:announcement).permit(:subject,:notice,:sport_id,:user_id)
     end
-    
     
     ## Set announcement Object, Return Error if not found
     def set_announcement
