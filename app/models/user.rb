@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   include DeviseTokenAuth::Concerns::User
   #association
   has_many :achievements
-  belongs_to :sport
+  #belongs_to :sport
   has_many :post
 
   #list roles
