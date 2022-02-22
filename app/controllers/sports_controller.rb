@@ -5,37 +5,53 @@ before_action :set_sport, only: [:update, :show, :destroy]
   # GET /sports
   def index
     @sports = Sport.all
-    render json: @sports
+    # render json: @sports
+    render_success 200, true, 'Sports fetched successfully', @sports.as_json 
   end
    
   # GET /sports/1
   def show
-    render json: @sport
+    #render json: @sport
+    render_success 200, true, 'Sport fetched successfully', @sport.as_json
   end
    
   # POST /sports
   def create
     @sport = Sport.new(sport_params)
-   
       if @sport.save
-        render json: @sport, status: :created, location: @sport  
+        #render json: @sport, status: :created, location: @sport 
+        render_success 200, true, 'Sport created successfully', @sport.as_json 
       else
-        render json: @sport.errors, status: :unprocessable_entity
+        #render json: @sport.errors, status: :unprocessable_entity
+        if @sport.errors
+          errors = @sport.errors.full_messages.join(", ")
+        else
+          errors = 'Sport creation failed'
+        end
+          return_error 500, false, errors, {}
       end
   end
    
   # PATCH/PUT /sports/1
   def update
    if @sport.update(sport_params)
-     render json: @sport
+     #render json: @sport
+     render_success 200, true, 'Sport updated successfully', @sport.as_json
    else
-     render json: @sport.errors, status: :unprocessable_entity
+     #render json: @sport.errors, status: :unprocessable_entity
+    if @sport.errors
+      errors = @sport.errors.full_messages.join(", ")
+    else
+      errors = 'Sport update failed'
+    end
+      return_error 500, false, errors, {}
    end
   end
    
   # DELETE /sports/1
   def destroy
     @sport.destroy
+    render_success 200, true, 'Sport deleted successfully', {}
   end
    
   private

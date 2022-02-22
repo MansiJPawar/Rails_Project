@@ -23,7 +23,6 @@ class SessionsController < DeviseTokenAuth::SessionsController
       @token = @resource.create_token
       @resource.save(:validate => false)
       sign_in(:user, @resource, store: false)
-    
       render_success 200, true, 'Logged in successfully', @resource.as_json
     end
   end
