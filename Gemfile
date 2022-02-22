@@ -49,4 +49,5 @@ gem 'devise_token_auth'
 
 gem 'devise'
 
+#pagination 
 gem 'kaminari'
