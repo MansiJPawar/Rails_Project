@@ -5,6 +5,7 @@ class SportsController < ApplicationController
 
   # GET /sports or /sports.json
   def index
+    ContactMailerJob.perform_later 1,2,3
     @sports = Sport.all
   end
 
@@ -64,6 +65,11 @@ class SportsController < ApplicationController
     end
   end
 
+  #server side dataTable
+  def get_dataset
+    render json: { sports: Sport.page(params[:page]).per(per_page) }
+  end
+ 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_sport

@@ -90,3 +90,10 @@ gem 'country_select', '~> 6.0'
 gem "select2-rails"
 
 gem 'jquery-validation-rails'
+
+gem 'kaminari'
+
+gem 'pry'
+gem "sidekiq", "~> 6.4"
+
+gem 'sinatra', github: 'sinatra/sinatra'

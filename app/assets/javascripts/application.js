@@ -17,13 +17,25 @@
 //= require popper
 //= require bootstrap-sprockets
 //= require activestorage
-//= require turbolinks
 //= require datatables
 //= require toggle
+//= require turbolinks
 //= require_tree .
 
 
 // loads datatables
   $(document).ready(function(){
-    $("#mysport").DataTable({})
+  $('#ajax-table').DataTable({
+    lengthMenu: [5, 10, 15, 25, 50],
+    ajax: {
+      url: '/get_dataset',
+      dataSrc: 'sports',
+      serverSide: true,
+    },
+    columns: [
+      {title: 'Sport name', data: 'sport_name'},
+      {title: 'Sport equipement', data: 'sport_equipement'},
+    ],
+    order: [['1', 'desc']]
   });
+});

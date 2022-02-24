@@ -9,4 +9,13 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: [:avatar])
   end
 
+  ## Pagination Page Number
+  def page
+    @page ||= params[:page] || 2
+  end
+
+  ## Pagination Per Page Records
+  def per_page
+    @per_page ||= params[:per_page] || 20
+  end
 end

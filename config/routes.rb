@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
+  require 'sidekiq/web'
+  mount Sidekiq::Web => "/sidekiq"
+  
   resources :achievements
 
   get '/posts/hashtag/:name', to:'posts#hashtags'
+  
+  #server side dataTable
+  get 'get_dataset', to: 'sports#get_dataset'
 
   resources :sports do
     resources :posts do

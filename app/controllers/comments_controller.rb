@@ -4,8 +4,10 @@ class CommentsController < ApplicationController
 
   #creates comments for a post
     def create
-      @comment = @post.comments.create(params[:comment].permit(:name, :body, :sport_id))
+      @comment = @post.comments.create(params[:comment].permit(:name, :body, :sport_id, :post_id))
       redirect_to sport_posts_path(@sport, @post)
+    # rescue NoMethodError => e
+    #   print_exception(e, true)
     end
     
     #delete comment
