@@ -8,8 +8,39 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-    <%= yield %>
+
+    <!-- MAIN WHOLE CONTENT STARTS -->
+    <div class="container-scroller">
+      <!-- HEADER -->
+      <%= render "shared/header" %>
+      <!-- HEADER -->
+
+      <!-- CONTENT BELOW HEADER STARTS-->
+      <div class="container-fluid page-body-wrapper">
+        <!-- partial:partials/_settings-panel.html -->
+        <%= render "shared/theme_setting" %>
+        <!-- right sidebar -->
+        <%= render "shared/right_sidebar" %>
+        <!-- partial:partials/_sidebar.html -->
+        <%= render "shared/left_navigation" %>
+        <!-- partial -->
+        <div class="main-panel">
+        
+          <!-- MAIN BODY CONTENT -->
+          <%= yield %>
+          <!-- content-wrapper ends -->
+          <!-- partial:partials/_footer.html -->
+          <%= render "shared/footer" %>
+          <!-- partial -->
+        </div>
+          <!-- main-panel ends -->
+      </div> 
+      <!-- CONTENT BELOW HEADER ENDS-->  
+      
+      <!-- page-body-wrapper ends -->
+    </div>
+      <!-- MAIN WHOLE CONTENT ENDS -->
+      <!-- container-scroller -->
   </body>
 </html>
