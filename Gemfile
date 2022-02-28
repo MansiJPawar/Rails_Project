@@ -63,4 +63,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'activeadmin'
 
+gem 'acts-as-taggable-on'
+
 gem 'devise'
