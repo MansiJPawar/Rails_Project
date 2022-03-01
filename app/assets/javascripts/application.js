@@ -10,6 +10,7 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require jquery
 //= require rails-ujs
 //= require 'plugins/Chart.roundedBarCharts.js'
 //= require 'plugins/dashboard.js'
@@ -22,6 +23,7 @@
 //= require 'plugins/jquery.dataTables.js'
 //= require 'plugins/todolist.js'
 //= require 'plugins/vendor.bundle.base.js'
+//= require 'plugins/chart.js'
 //= require activestorage
 //= require turbolinks
 //= require_tree .
