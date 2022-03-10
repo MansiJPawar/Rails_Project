@@ -5,12 +5,12 @@ class DataDecryption
 
   ## Initialize Private Key Path
   def initialize
-  	@private_key_str = "#{Rails.root}/config/decryption/decryption.pem"
+  	@private_key_str = "#{Rails.root}/config/decryption/test"
   end
 
   ## Generate Private Key Object
   def private_key
-    OpenSSL::PKey::RSA.new(File.read(@private_key_str), Rails.application.credentials[:encryption_key])
+    OpenSSL::PKey::RSA.new(File.read(@private_key_str), "12345678")
   end
 
   ## Decrypt Details
