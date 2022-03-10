@@ -1,6 +1,6 @@
 class RegistrationsController < DeviseTokenAuth::RegistrationsController 
-  
-  #GET /resource/sign_up
+   
+  #POST   /auth
   def create
     user = User.new(sign_up_params)
     if user.save 
@@ -10,16 +10,9 @@ class RegistrationsController < DeviseTokenAuth::RegistrationsController
     end
   end
 
-  def show
-    render json: User.find(params[:id])
-  rescue ActiveRecord::RecordNotFound
-    render json: {}, status: :not_found
-    #return_error 500, false, errors, {}
-  end
-
   private
-
-  def sign_up_params
-    params.require(:user).permit(:email,:password,:password_confirmation,:uid,:provider,:name)
-  end
+    #sign up attributes
+    def sign_up_params
+      params.require(:user).permit(:email,:password,:password_confirmation,:uid,:provider,:name)
+    end
 end

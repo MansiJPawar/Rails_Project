@@ -1,14 +1,22 @@
-class PostsController < ApplicationController
+class Api::V2::PostsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_sport
   before_action :set_post, only: [:update, :show, :destroy]
     
-  # This action fetch all the posts of sport
+  #GET  /api/v1/sports/:sport_id/posts
+  #This action fetch all the posts of sport
   def index
     posts = @sport.posts(page).per(per_page)
     render_success 200, true, 'Posts fetched successfully', posts.as_json 
   end
+
+  #GET /api/v1/sports/:sport_id/posts/:id
+  #Fetch an post API
+  def show
+    render_success 200, true, 'Post fetched successfully', @post.as_json
+  end
   
+  #POST   /api/v1/sports/:sport_id/posts
   # this action lets us create a new post
   def create
     post = @sport.posts.new(post_params)
@@ -24,7 +32,8 @@ class PostsController < ApplicationController
       end
   end
   
-  # Update post API
+  #PUT  /api/v1/sports/:sport_id/posts/:id
+  #Update post API
   def update
     if @post.update(post_params)
       render_success 200, true, 'Post updated successfully', @post.as_json
@@ -38,23 +47,19 @@ class PostsController < ApplicationController
     end
   end
   
-  # Fetch an post API
-  def show
-    render_success 200, true, 'Post fetched successfully', @post.as_json
-  end
-  
+  #DELETE /api/v1/sports/:sport_id/posts/:id
   # Delete an post API
   def destroy
     @post.destroy
     render_success 200, true, 'Post deleted successfully', {}
   end
-  
+
   private
     def set_sport
       @sport = Sport.where(id: params[:sport_id]).first
-        unless @sport
-          return return_error 404, false, 'Product not found', {}
-        end
+      unless @sport
+        return return_error 404, false, 'Product not found', {}
+      end
     end
     
     # Params of Post
@@ -77,5 +82,4 @@ class PostsController < ApplicationController
     def per_pag
       @per_page ||= params[:per_page] || 5
     end
-    
-  end
+end

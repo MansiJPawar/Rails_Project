@@ -1,6 +1,9 @@
 class ApplicationController < ActionController::API
   include DeviseTokenAuth::Concerns::SetUserByToken
 
+  #Callbacks
+  before_action :validate_app_version
+
   # Custom Authentication Error Message
   def render_authenticate_error
     return_error 401, false, 'You need to sign in or sign up before continuing.', {}
@@ -27,18 +30,31 @@ class ApplicationController < ActionController::API
         data: data
       }
     end
-          
-    ## Pagination Page Number
+    
+    #Exception Handling Block
+    def exception_handling(e)
+      logger.error "Exception Handling: #{e}"
+      return_error 500, false, e.message, {}
+    end
+
+    #Check for Latest App Version
+    def validate_app_version
+      if Rails.application.credentials[Rails.env.to_sym][:app_version].to_f > request.headers["app-version"].to_f
+        return_error 433, false, 'Please check your app version', {}
+      end
+    end
+    
+    #Pagination Page Number
     def page
       @page ||= params[:page] || 1
     end
           
-    ## Pagination Per Page Records
+    #Pagination Per Page Records
     def per_page
       @per_page ||= params[:per_page] || 10
     end
           
-    ## Set Product & Return ERROR if not found
+    #Set Product & Return ERROR if not found
     def set_sport
       @sport = Sport.where(id: params[:sport_id]).first   
       unless @sport

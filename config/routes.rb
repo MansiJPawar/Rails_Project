@@ -3,13 +3,25 @@ Rails.application.routes.draw do
     registrations: 'registrations', sessions: 'sessions'
   }
 
-  devise_scope :user do
-    resources :sports do
-      resources :posts
-      resources :announcements
+  concern :api_base do
+    devise_scope :user do
+      resources :sports do
+        resources :posts
+        resources :announcements
+      end
+        resources :achievements
     end
-      resources :achievements
   end
+
+  namespace :api, defaults: { format: :json } do
+    namespace :v1 do
+      concerns :api_base
+    end
+
+    namespace :v2 do
+      concerns :api_base
+    end
+  end  
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

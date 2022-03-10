@@ -1,14 +1,22 @@
-class AnnouncementsController < ApplicationController
+class Api::V2::AnnouncementsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_sport
   before_action :set_announcement, only: [:update, :show, :destroy]
       
+  #GET  /api/v1/sports/:sport_id/announcements
   # This action fetch all the announcements of sport
   def index
     announcements = @sport.announcements.all(page).per(per_page)
     render_success 200, true, 'announcements fetched successfully', announcements.as_json
   end
-    
+
+  #GET  /api/v1/sports/:sport_id/announcements/:id
+  # Fetch an announcement API
+  def show
+    render_success 200, true, 'announcement fetched successfully', @announcement.as_json
+  end
+   
+  # POST /api/v1/sports/:sport_id/announcements
   # this action lets us create a new announcement
   def create
     announcement = @sport.announcements.new(announcement_params) 
@@ -23,7 +31,8 @@ class AnnouncementsController < ApplicationController
       return_error 500, false,'Only admin can create announcement'
     end
   end
-    
+  
+  #PUT#PATCH  /api/v1/sports/:sport_id/announcements/:id
   # Update announcement API
   def update
     if @announcement.update(announcement_params) && current_user.admin?
@@ -37,12 +46,8 @@ class AnnouncementsController < ApplicationController
         return_error 500, false, 'Only admin can update'
     end
   end
-    
-  # Fetch an announcement API
-  def show
-    render_success 200, true, 'announcement fetched successfully', @announcement.as_json
-  end
-    
+  
+  # DELETE /api/v1/sports/:sport_id/announcements/:id
   # Delete an announcement API
   def destroy
     if current_user.admin?
@@ -73,4 +78,4 @@ class AnnouncementsController < ApplicationController
         return return_error 404, false, 'announcement not found', {}
       end
     end
-  end
+end
