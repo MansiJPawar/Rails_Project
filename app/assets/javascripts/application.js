@@ -12,15 +12,15 @@
 //
 //= require jquery
 //= require rails-ujs
+//= require 'plugins/jquery.dataTables.js'
+//= require 'plugins/dataTables.select.min.js'
 //= require 'plugins/Chart.roundedBarCharts.js'
 //= require 'plugins/dashboard.js'
-//= require 'plugins/dataTables.select.min.js'
 //= require 'plugins/hoverable-collapse.js'
 //= require 'plugins/off-canvas.js'
 //= require 'plugins/settings.js'
 //= require 'plugins/template.js'
 //= require 'plugins/Chart.min.js'
-//= require 'plugins/jquery.dataTables.js'
 //= require 'plugins/todolist.js'
 //= require 'plugins/vendor.bundle.base.js'
 //= require 'plugins/chart.js'
