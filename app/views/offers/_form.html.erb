@@ -1,46 +1,47 @@
-<%= form_with(model: offer, local: true) do |form| %>
+<div>
+  <%= form_with(model: offer, local: true, class: 'offer-validation') do |form| %>
   <% if offer.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(offer.errors.count, "error") %> prohibited this offer from being saved:</h2>
+      <h2><%= pluralize(offer.errors.count, "error") %>Unable to save your offer:</h2>
 
       <ul>
       <% offer.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
+
     </div>
   <% end %>
 
-  <div class="field form-group">
-    <%= form.label :business %>
-    <%= form.collection_select(:business_id, Business.all, :id, :name, { :prompt => 'Select a Business', :selected => @offer.business_id },{class: "form-control",placeholder: "Title"}) %>
-  </div>
-  <br>
-
-  <div class="field form-group">
-    <%= form.label :title %>
-    <%= form.text_field :title, class: "form-control",placeholder: "Title" %>
-  </div>
- <br>
+  <div style="margin: 50px; width:600px;" class="container">
+    <div class="field form-group">
+      <%= form.collection_select(:business_id, Business.all, :id, :name, { :prompt => 'Select a Business', :selected => @offer.business_id },{class: "form-control",placeholder: "Title"}) %>
+    </div>
+    <br>
   
-  <div class="field form-group">
-    <%= form.label :description %>
-    <%= form.text_field :description, class: "form-control",placeholder: "Description" %>
+    <div class="field form-group">
+      <%= form.text_field :title, class: "form-control",placeholder: "Title" %>
+    </div>
+   <br>
+    
+    <div class="field form-group">
+      <%= form.text_field :description, class: "form-control",placeholder: "Description" %>
+    </div>
+    <br>
+    
+    <div class="field form-group">
+      <%= form.label :start_date %>
+      <%= form.datetime_field :start_date, class: "form-control",placeholder: "Start Date" %>
+    </div>
+    <br>
+    <div class="field form-group">
+      <%= form.label :end_date %>
+      <%= form.datetime_field :end_date, class: "form-control",placeholder: "End Date" %>
+    </div><br></br>
+    <div class="actions">
+      <%= form.submit class:"btn btn-primary"%>
+    </div>
   </div>
-  <br>
-  
-  <div class="field form-group">
-    <%= form.label :start_date %>
-    <%= form.datetime_field :start_date, class: "form-control",placeholder: "Start Date" %>
-  </div>
-  <br>
-  <div class="field form-group">
-    <%= form.label :end_date %>
-    <%= form.datetime_field :end_date, class: "form-control",placeholder: "End Date" %>
-  </div>
-  <br>
-  </br>
-  <div class="actions">
-    <%= form.submit class:"btn btn-dark"%>
-  </div>
+ 
 <% end %>
+</div>

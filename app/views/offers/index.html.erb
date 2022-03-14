@@ -1,9 +1,11 @@
 <div class="card" style="margin: 100px;">
     <div class="card-header">
-      <h4>Offer List</h4>
+      <h4>Offer Listing</h4>
       <div class="card-body">
-        <table class="table table-bordered table-striped sport-id-class" id='offer-table'> 
+        <!-- server side dataTable starts-->
+        <table id='offers-table' class="table table-bordered table-striped sport-id-class"> 
         </table>    
+         <!-- server side dataTable ends -->
         <%= link_to 'New offer', new_offer_path, class: "btn btn-dark" %>
       </div>
     </div>

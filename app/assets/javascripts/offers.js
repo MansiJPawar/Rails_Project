@@ -1,5 +1,7 @@
 $(document).on("turbolinks:load", function() {
-    $("#offer-table").DataTable({
+
+  //Server Side DataTable
+  $("#offers-table").DataTable({
         lengthMenu: [5, 10, 15, 25, 50],
         ajax: {
           url: "/fetch_offers",
@@ -29,4 +31,49 @@ $(document).on("turbolinks:load", function() {
         ],
           order: [['1', 'desc']]
     });
+  });
+
+  //validations
+  $('.offer-validation').validate({
+    errorElement: 'span',
+    onfocusout: function (element) {
+      return false;
+    },
+    ignore: function (index, el) {
+      var $el = $(el);
+
+      if ($el.hasClass('always-validate')) {
+        return false;
+      }
+
+      // Default behavior
+      return $el.is(':hidden') || $el.hasClass('ignore');
+    },
+    rules: {
+      'offer[title]': {
+        required: true
+      },
+      'offer[description]': {
+        required: true
+      },
+      'offer[coupon]': {
+        required: true
+      }
+    },
+    messages: {
+      'offer[title]': {
+        required: 'Please enter title'
+      },
+      'offer[description]': {
+        required: 'Please enter description.'
+      },
+    },
+    errorPlacement: function (error, element) {
+      var placement = $(element).data('error');
+      if (placement) {
+        $('.' + placement).html(error)
+      } else {
+        error.insertAfter(element);
+      }
+    }
   });

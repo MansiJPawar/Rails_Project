@@ -61,10 +61,17 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+#debug
 gem 'pry'
 
+#jquery
 gem 'jquery-rails'
 
+#dropdown select
 gem "select2-rails"
 
+#dataTable
 gem "jquery-datatables", "~> 1.10"
+
+#for annotation
+gem 'annotate'

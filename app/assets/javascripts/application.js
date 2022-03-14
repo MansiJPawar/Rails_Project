@@ -30,6 +30,7 @@
 //= require datatables
 //= require businesses
 //= require offers
+//= require offer
 //= require turbolinks
 //= require_tree .
 

@@ -1,11 +1,9 @@
 <div class="card">
-    <div class="card-header">
-      <h4>Add New Offer</h4>
-    </div>
-    <div class="card-body">
-      <%= render 'form', offer: @offer %>
-      </br>
-      <%= link_to 'Back', offers_path,class: "btn btn-dark" %>
-    </div>
+  <div class="card-header">
+    <h4>Add New Offer to Your Business</h4>
   </div>
-  </br>
+  <div class="card-body">
+    <%= render 'form', offer: @offer %></br>
+    <%= link_to 'Back', offers_path, class: "btn btn-primary" %>
+  </div>
+</div></br>
