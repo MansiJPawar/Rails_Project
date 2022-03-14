@@ -1,14 +1,16 @@
-<div class="card">
-  <div class="card-header">
+<div class="card" style="width: 1400px; height:500px;">
+  <div class="card-header" style="padding:100px;">
     <p id="notice"><%= notice %></p>
-  
-      <%= @offer.business_id %>
-      <%= @offer.title %>
-      <%= @offer.description %>
+      <div>
+      <strong>Business:</strong>
+      <%= @offer.business_id %><br><br>
+      <strong><%= @offer.title %></strong><br><br>
+      <%= @offer.description %><br>
       <%= @offer.start_date %>
       <%= @offer.end_date %>
-
-      <%= link_to 'Edit', edit_offer_path, class:"btn btn-secondary" %> <br><br>
+      </div>
+      <br><br>
+      <%= link_to 'Edit', edit_offer_path, class:"btn btn-secondary" %> ||
       <%= link_to 'Back', offers_path, class:"btn btn-secondary"%>
    </div>
 </div>
