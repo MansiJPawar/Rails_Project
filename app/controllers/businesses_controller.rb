@@ -56,8 +56,6 @@ class BusinessesController < ApplicationController
   
   def fetch_businesses
     render json: { businesses: Business.all} 
-    search_string = []
-    filter_query = ''
   end
 
   private
