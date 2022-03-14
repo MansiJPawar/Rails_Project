@@ -56,6 +56,16 @@ class BusinessesController < ApplicationController
   
   def fetch_businesses
     render json: { businesses: Business.all} 
+    search_string = []
+    filter_query = ''
+
+    ## Check if Search Keyword is Present & Write it's Query
+    if params.has_key?('search') && params[:search].has_key?('value') && params[:search][:value].present?
+      search_columns.each do |term|
+        search_string << "#{term} ILIKE :search"
+      end
+      businesses = businesses.where(search_string.join(' OR '), search: "%#{params[:search][:value]}%")
+    end
   end
 
   private
