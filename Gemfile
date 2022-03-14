@@ -64,3 +64,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'pry'
 
 gem 'jquery-rails'
+
+gem "select2-rails"
+
+gem "jquery-datatables", "~> 1.10"

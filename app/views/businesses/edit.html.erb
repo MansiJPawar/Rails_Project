@@ -1,0 +1,10 @@
+<div class="container", id="font-text">
+    <h1 id="head-text-color">Editing Business</h1>
+
+    <%= render 'form', business: @business %><br/><br/>
+    
+    <p class="lead">
+        <%= link_to 'Edit', edit_business_path(@business), class: "btn btn-dark" %> 
+        <%= link_to 'Back', businesses_path, class: "btn btn-dark"%>
+    </p>
+</div>

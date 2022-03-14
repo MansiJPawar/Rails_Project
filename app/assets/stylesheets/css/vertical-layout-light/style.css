@@ -19328,32 +19328,32 @@ input:focus {
 
 @font-face {
   font-family: 'Nunito';
-  src: url("assets/fonts/Nunito/Nunito-Light.eot");
-  src: url("assets/fonts/Nunito/Nunito-Light.eot?#iefix") format("embedded-opentype"), url("app/assets/fonts/Nunito/Nunito-Light.woff2") format("woff2"), url("app/assets/fonts/Nunito/Nunito-Light.woff") format("woff"), url("app/assets/fonts/Nunito/Nunito-Light.ttf") format("truetype");
+  src: url("app/assets/fonts/Nunito/Nunito-Light.eot");
+  src: url("app/assets/fonts/Nunito/Nunito-Light.eot?#iefix") format("embedded-opentype"), url("app/assets/fonts/Nunito/Nunito-Light.woff2") format("woff2"), url("app/assets/fonts/Nunito/Nunito-Light.woff") format("woff"), url("app/assets/fonts/Nunito/Nunito-Light.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Nunito';
-  src: url("assets/fonts/Nunito/Nunito-Bold.eot");
-  src: url("assets/fonts/Nunito/Nunito-Bold.eot?#iefix") format("embedded-opentype"), url("app/assets/fonts/Nunito/Nunito-Bold.woff2") format("woff2"), url("app/assets/fonts/Nunito/Nunito-Bold.woff") format("woff"), url("app/assets/fonts/Nunito/Nunito-Bold.ttf") format("truetype");
+  src: url("app/assets/fonts/Nunito/Nunito-Bold.eot");
+  src: url("app/assets/fonts/Nunito/Nunito-Bold.eot?#iefix") format("embedded-opentype"), url("app/assets/fonts/Nunito/Nunito-Bold.woff2") format("woff2"), url("app/assets/fonts/Nunito/Nunito-Bold.woff") format("woff"), url("app/assets/fonts/Nunito/Nunito-Bold.ttf") format("truetype");
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Nunito';
-  src: url("assets/fonts/Nunito/Nunito-SemiBold.eot");
-  src: url("assets/fonts/Nunito/Nunito-SemiBold.eot?#iefix") format("embedded-opentype"), url("app/assets/fonts/Nunito/Nunito-SemiBold.woff2") format("woff2"), url("app/assets/fonts/Nunito/Nunito-SemiBold.woff") format("woff"), url("app/assets/fonts/Nunito/Nunito-SemiBold.ttf") format("truetype");
+  src: url("app/assets/fonts/Nunito/Nunito-SemiBold.eot");
+  src: url("app/assets/fonts/Nunito/Nunito-SemiBold.eot?#iefix") format("embedded-opentype"), url("app/assets/fonts/Nunito/Nunito-SemiBold.woff2") format("woff2"), url("app/assets/fonts/Nunito/Nunito-SemiBold.woff") format("woff"), url("app/assets/fonts/Nunito/Nunito-SemiBold.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Nunito';
-  src: url("assets/fonts/Nunito/Nunito-Regular.eot");
-  src: url("assets/fonts/Nunito/Nunito-Regular.eot?#iefix") format("embedded-opentype"), url("app/assets/fonts/Nunito/Nunito-Regular.woff2") format("woff2"), url("app/assets/fonts/Nunito/Nunito-Regular.woff") format("woff"), url("app/assets/fonts/Nunito/Nunito-Regular.ttf") format("truetype");
+  src: url("app/assets/fonts/Nunito/Nunito-Regular.eot");
+  src: url("app/assets/fonts/Nunito/Nunito-Regular.eot?#iefix") format("embedded-opentype"), url("app/assets/fonts/Nunito/Nunito-Regular.woff2") format("woff2"), url("app/assets/fonts/Nunito/Nunito-Regular.woff") format("woff"), url("app/assets/fonts/Nunito/Nunito-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -22170,7 +22170,7 @@ code {
 }
 
 .data-icon-card-primary .background-icon::before {
-  content: url("../../images/dashboard/shape-4.svg");
+  content: url("app/assets/images/dashboard/shape-4.svg");
   position: absolute;
 }
 
@@ -22189,7 +22189,7 @@ code {
 }
 
 .data-icon-card-secondary .background-icon::before {
-  content: url("../../images/dashboard/shape-4.svg");
+  content: url("app/assets/images/dashboard/shape-4.svg");
   position: absolute;
 }
 
@@ -22208,7 +22208,7 @@ code {
 }
 
 .data-icon-card-success .background-icon::before {
-  content: url("../../images/dashboard/shape-4.svg");
+  content: url("app/assets/images/dashboard/shape-4.svg");
   position: absolute;
 }
 
@@ -22227,7 +22227,7 @@ code {
 }
 
 .data-icon-card-info .background-icon::before {
-  content: url("../../images/dashboard/shape-4.svg");
+  content: url("app/assets/images/dashboard/shape-4.svg");
   position: absolute;
 }
 
@@ -22246,7 +22246,7 @@ code {
 }
 
 .data-icon-card-warning .background-icon::before {
-  content: url("../../images/dashboard/shape-4.svg");
+  content: url("app/assets/images/dashboard/shape-4.svg");
   position: absolute;
 }
 
@@ -22265,7 +22265,7 @@ code {
 }
 
 .data-icon-card-danger .background-icon::before {
-  content: url("../../images/dashboard/shape-4.svg");
+  content: url("app/assets/images/dashboard/shape-4.svg");
   position: absolute;
 }
 
@@ -22284,7 +22284,7 @@ code {
 }
 
 .data-icon-card-light .background-icon::before {
-  content: url("../../images/dashboard/shape-4.svg");
+  content: url("app/assets/images/dashboard/shape-4.svg");
   position: absolute;
 }
 
@@ -22303,7 +22303,7 @@ code {
 }
 
 .data-icon-card-dark .background-icon::before {
-  content: url("../../images/dashboard/shape-4.svg");
+  content: url("app/assets/images/dashboard/shape-4.svg");
   position: absolute;
 }
 

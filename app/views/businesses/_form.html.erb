@@ -1,0 +1,31 @@
+<%= form_with(model: business, local: true) do |form| %>
+  <% if business.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(business.errors.count, "error") %> denied sport from being saved:</h2>
+
+      <ul>
+      <% business.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <br/>
+ 
+  <div id="form-box">
+    
+    <div class="field form-group">
+      <%= form.text_field :name, class:"form-control" , placeholder:"name" %>
+    </div><br/>
+  
+    <div class="field form-group">
+      <%= form.text_area :address, class:"form-control" , placeholder:"address" %>
+    </div>
+    <br/>
+    
+    <div class="actions">
+      <%= form.submit class:"btn btn-light" %>
+    </div><br/> 
+  
+  </div>  
+<% end %>
