@@ -22,7 +22,17 @@
       <%= form.text_area :address, class:"form-control" , placeholder:"address" %>
     </div>
     <br/>
-    
+
+    <div class="field form-group">
+      <%= form.label :start_date %>
+      <%= form.datetime_field :start_date, class: "form-control",placeholder: "Start Date" %>
+    </div>
+    <br>
+    <div class="field form-group">
+      <%= form.label :end_date %>
+      <%= form.datetime_field :finish_date, class: "form-control",placeholder: "End Date" %>
+    </div>
+      
     <div class="actions">
       <%= form.submit class:"btn btn-light" %>
     </div><br/> 

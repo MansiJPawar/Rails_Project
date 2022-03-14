@@ -9,6 +9,8 @@ $(document).ready(function(){
       columns: [
       {title: 'Business', data: 'name'},
       {title: 'Address', data: 'address'},
+      {title: 'StartDate', data: 'start_date'},
+      {title: 'EndDate', data: 'finish_date'},
       {  
         "data": null,
         "bSortable": false,

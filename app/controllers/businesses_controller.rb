@@ -5,7 +5,7 @@ class BusinessesController < ApplicationController
     @businesses = Business.all
     respond_to do |format|
       format.html
-      format.csv { send_data @businesses.to_csv(['name', 'address']) }
+      format.csv { send_data @businesses.to_csv(['name', 'address', 'start_date', 'finish_date']) }
     end
   end
  
@@ -75,6 +75,6 @@ class BusinessesController < ApplicationController
     end
  
     def business_params
-      params.require(:business).permit(:name, :address, :logo)
+      params.require(:business).permit(:name, :address, :logo, :start_date, :finish_date)
     end
 end
