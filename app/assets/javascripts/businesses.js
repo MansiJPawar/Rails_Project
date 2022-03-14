@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  $('#ajax-table').DataTable({
+  $('#business-table').DataTable({
     lengthMenu: [5, 10, 15, 25, 50],
       ajax: {
         url: "/fetch_businesses",

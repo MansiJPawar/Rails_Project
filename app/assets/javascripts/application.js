@@ -29,6 +29,7 @@
 //= require select2-full
 //= require datatables
 //= require businesses
+//= require offers
 //= require turbolinks
 //= require_tree .
 

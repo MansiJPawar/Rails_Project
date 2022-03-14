@@ -1,7 +1,7 @@
 <%= form_with(model: business, local: true) do |form| %>
   <% if business.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(business.errors.count, "error") %> denied sport from being saved:</h2>
+      <h2><%= pluralize(business.errors.count, "error") %> denied business from being saved:</h2>
 
       <ul>
       <% business.errors.full_messages.each do |message| %>

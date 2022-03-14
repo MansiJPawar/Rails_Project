@@ -1,4 +1,4 @@
 class Offer < ApplicationRecord
   #Association
-  belongs_to :businesses
+  belongs_to :business
 end
