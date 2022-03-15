@@ -49,8 +49,12 @@ class OffersController < ApplicationController
   end
   
   def fetch_offers
-    render json: { offers: Offer.all} 
     search_string = []
+    filter_query = ''
+    response = []
+    offers = Offer.all
+    businesses = Business.all
+
     ## Check if Search Keyword is Present & Write it's Query
     if params.has_key?('search') && params[:search].has_key?('value') && params[:search][:value].present?
       search_columns.each do |term|
@@ -58,6 +62,18 @@ class OffersController < ApplicationController
       end
       offers = offers.where(search_string.join(' OR '), search: "%#{params[:search][:value]}%")
     end
+
+    offers.each do |offer|
+      json = offer.as_json
+      json['business_name'] = offer.business.name
+      response.push(json)
+    end 
+
+    render json: {
+        offers: response,
+        draw: params['draw'].to_i,
+        recordsTotal: offers.count,
+    }  
   end
 
   private

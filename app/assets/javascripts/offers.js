@@ -9,7 +9,7 @@ $(document).on("turbolinks:load", function() {
         serverSide: true,
       },
       columns: [
-        { title: "Business", data: "business_id" },
+        { title: "Business", data: "business_name" },
         { title: "Title", data: "title" },
         { title: "Description", data: "description" },
         { title: "Start Time", data: "start_date" },

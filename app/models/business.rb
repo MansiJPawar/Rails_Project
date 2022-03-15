@@ -23,8 +23,4 @@ class Business < ApplicationRecord
       end
     end
   end
-
-  def business_name
-    return self.name
-  end
 end
