@@ -2,7 +2,6 @@ class OffersController < ApplicationController
   before_action :set_offer, only: ['show', 'edit', 'update', 'destroy']
 
   def index
-    @offer = Offer.all
   end
  
   def show
@@ -43,7 +42,6 @@ class OffersController < ApplicationController
 
   def destroy
     @offer.destroy
-
     respond_to do |format|
       format.html { redirect_to offers_url, notice: "offer was successfully destroyed." }
       format.json { head :no_content }
@@ -53,8 +51,6 @@ class OffersController < ApplicationController
   def fetch_offers
     render json: { offers: Offer.all} 
     search_string = []
-    filter_query = ''
-
     ## Check if Search Keyword is Present & Write it's Query
     if params.has_key?('search') && params[:search].has_key?('value') && params[:search][:value].present?
       search_columns.each do |term|
@@ -77,12 +73,10 @@ class OffersController < ApplicationController
       columns[params[:order]['0'][:column].to_i - 1]
     end
 
-
     def set_offer
       @offer = Offer.find(params[:id])
     end
 
- 
     def offer_params
       params.require(:offer).permit(:title, :description, :start_date, :end_date, :business_id)
     end

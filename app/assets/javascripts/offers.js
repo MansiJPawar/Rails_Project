@@ -47,7 +47,7 @@ $(document).on("turbolinks:load", function() {
         return false;
       }
 
-      // Default behavior
+    // Default behavior
       return $el.is(':hidden') || $el.hasClass('ignore');
     },
     rules: {

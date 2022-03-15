@@ -75,3 +75,6 @@ gem "jquery-datatables", "~> 1.10"
 
 #for annotation
 gem 'annotate'
+
+#cron job
+gem 'whenever', require: false

@@ -16,4 +16,16 @@
  *= require_self
  */
 
+#margin {
+    margin: 50px;
+  }
+
+#show {
+  width: 1400px; 
+  height:500px;
+}
+
+#o1{
+  padding:100px;
+}
  

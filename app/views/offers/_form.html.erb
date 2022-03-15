@@ -13,7 +13,7 @@
     </div>
   <% end %>
 
-  <div style="margin: 50px;" class="container">
+  <div id="margin" class="container">
     <div class="field form-group">
       <%= form.collection_select(:business_id, Business.all, :id, :name, { :prompt => 'Select a Business', :selected => @offer.business_id },{class: "form-control",placeholder: "Title"}) %>
     </div>
