@@ -3,7 +3,7 @@ $(document).on('turbolinks:load', function () {
     function applyFilters(filters) {
       if (filters != '') {
         $('#challenge-list-table').DataTable().ajax.url(
-            "/admin/campaigns/" + $('#challenge-list-table').attr('campaign_id') + "/challenges/fetch_challenges"
+            "/admin/campaigns/" + $('#challenge-list-table').attr('campaign_id') + "/offers/fetch_offers"
             + "?filters=" + JSON.stringify(filters)
         )
             .load() //checked

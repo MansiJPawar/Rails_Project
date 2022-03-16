@@ -1,6 +1,14 @@
 <div class="card" id="margin">
   <div class="card-header">
     <h4>List of Offers</h4>
+
+    <!-- <%= form_tag offers_path, :method => 'get' do %>
+      <%= collection_select :offer, :business_id, Business.all, :id, :name, prompt: true%>
+      <%= submit_tag "filter" %>
+    <% end %> -->
+
+    <!-- <%= render 'filters' %> -->
+
     <div class="card-body">
       <!-- server side dataTable starts-->
       <table id='offers-table' class="table table-bordered table-striped sport-id-class"> 

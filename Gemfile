@@ -78,3 +78,6 @@ gem 'annotate'
 
 #cron job
 gem 'whenever', require: false
+
+#audit gem to store records 
+gem "audited", "~> 5.0"

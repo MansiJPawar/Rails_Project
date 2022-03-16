@@ -21,19 +21,17 @@
   
     <div class="field form-group">
       <%= form.text_field :title, class: "form-control",placeholder: "Title" %>
-    </div>
-   <br>
+    </div><br>
     
     <div class="field form-group">
       <%= form.text_field :description, class: "form-control",placeholder: "Description" %>
-    </div>
-    <br>
+    </div><br>
     
     <div class="field form-group">
       <%= form.label :start_date %>
       <%= form.datetime_field :start_date, class: "form-control",placeholder: "Start Date" %>
-    </div>
-    <br>
+    </div><br>
+
     <div class="field form-group">
       <%= form.label :end_date %>
       <%= form.datetime_field :end_date, class: "form-control",placeholder: "End Date" %>
@@ -43,6 +41,5 @@
       <%= form.submit class:"btn btn-primary"%>
     </div>
   </div>
- 
 <% end %>
 </div>
