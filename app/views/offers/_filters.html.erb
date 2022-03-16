@@ -3,13 +3,12 @@
     <h4>Filters <span><button class="btn-xs btn-outline-primary reset_user_filters_btn">Reset</button></span>
     </h4>
 </div>
-
 <div class="mt-1">
     <h5>Business</h5>
-    <%= select_tag :offers,
-                    options_for_select(all_businesses_filter),
-                    class: 'form-control-sm participants-offers-filter', multiple: 'multiple' %>
-    <div class="tag_box participants-filter-offers-selection users-filter-selection" style="padding-top: 5px;">
+    <%= select_tag :businesses,
+                   options_for_select(all_business_humanize),
+                   class: 'form-control-sm business-sidebar' %>
+    <div name="businesses" style="padding-top: 5px;">
     </div>
 </div>
-
+</div>

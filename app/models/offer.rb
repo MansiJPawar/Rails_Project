@@ -15,7 +15,12 @@ class Offer < ApplicationRecord
 
    #Validation
    #validates :title, :description, :start_date, :end_date, presence: true
-
+   
+   def as_json 
+    response = super
+    response.merge!({business_name: self.business.name})
+    response
+  end 
 end
 
 
@@ -67,7 +72,7 @@ end
 
 #           ## Back up
 #           # status_query = status_query + " #{keyword} (is_approved = true AND start <= convert_tz('#{current_utc_time}', 'UTC', timezone) AND finish >= convert_tz('#{current_utc_time}', 'UTC', timezone))"
-#           # status_query = status_query + " #{keyword} (is_approved = true AND start <= convert_tz('#{current_utc_time}', 'UTC', timezone) AND finish >= convert_tz('#{current_utc_time}', 'UTC', timezone))"
+#           # stat  before_action :set_businessus_query = status_query + " #{keyword} (is_approved = true AND start <= convert_tz('#{current_utc_time}', 'UTC', timezone) AND finish >= convert_tz('#{current_utc_time}', 'UTC', timezone))"
 #         elsif val == 'scheduled'
 #           status_query = status_query +
 #               " #{keyword} is_approved = true AND start > timezone(timezone,now())"

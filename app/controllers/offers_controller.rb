@@ -59,71 +59,21 @@ class OffersController < ApplicationController
       search_columns.each do |term|
         search_string << "#{term} ILIKE :search"
       end
-      offers = offers.where(search_string.join(' OR '), search: "%#{params[:search][:value]}%")
     end
 
-    # if params["filters"].present?
-    #   filters = JSON.parse(params["filters"].gsub("=>", ":").gsub(":nil,", ":null,"))
-    #   offers = offers.challenge_side_bar_filter(filters)
-    # end
-
-    # offers = offers.order("#{sort_column} #{datatable_sort_direction}") unless sort_column.nil?
-    # offers = offers.page(datatable_page).per(datatable_per_page)
-
-    # render json: {
-    #     offers: offers.as_json(type: 'list'),
-    #     draw: params['draw'].to_i,
-    #     recordsTotal: @campaign.offers.count,
-    #     recordsFiltered: offers.total_count,
-    # }
-
-    offers.each do |offer|
-      json = offer.as_json
-      json['business_name'] = offer.business.name
-      # #to format date and time in json
-      # json['start'] = offer.start_date.strftime("at %I:%M %p %Y %m %d")
-      # json['end'] = offer.end_date.strftime("at %I:%M %p %Y %m %d")
-      response.push(json)
-    end 
+    if params["filters"].present?
+      filters = JSON.parse(params["filters"].gsub("=>", ":").gsub(":nil,", ":null,"))
+      
+      offers = offers.where(business_id: filters['business_id']) if filters['business_id'].present?
+    end
 
     render json: {
-        offers: response,
+        offers: offers.as_json,
         draw: params['draw'].to_i,
         recordsTotal: offers.count,
+        #recordsFiltered: offers.total_count
     }  
   end
-
-  # ## Fetch Participants of Particular Challenge
-  # def participants
-  #   @participants = @challenge.participants rescue nil
-  # end
-
-
-# ## Build Nested Attributes Params for User Segments
-# def build_segment_params
-#   @available_segments = []
-#   if params[:challenge].has_key?('challenge_filters_attributes')
-#     new_params = []
-
-#     cust_params = params[:challenge][:challenge_filters_attributes]
-#     cust_params.each do |key, c_param|
-#       filter_data = {
-#           challenge_event: c_param[:challenge_event],
-#           challenge_condition: c_param[:challenge_condition],
-#           challenge_value: c_param["challenge_value_#{c_param[:challenge_event]}"]
-#       }
-
-#       if c_param.has_key?('id')
-#         filter_data[:id] = c_param[:id]
-#         @available_segments.push(c_param[:id].to_i)
-#       end
-
-#       new_params.push(filter_data)
-#     end
-
-#     params[:challenge][:challenge_filters_attributes] = new_params
-#   end
-#   end
 
   private
 
