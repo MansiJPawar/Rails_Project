@@ -1,0 +1,53 @@
+<div>
+
+<!-- Button to Open the POPUP -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+    Audit
+</button>
+
+<!-- AUDIT POPUP  -->
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+    
+        <!-- POPUP Header -->
+        <div class="modal-header">
+        <h4 class="modal-title">Offer Audits</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- POPUP body -->
+        <% offer = Offer.all %>
+          
+        <div class="modal-body">
+
+        <table> 
+            <div>
+            <tr>
+                <th>Offer Name</th>
+                <th>Audit count</th>
+                <th>Audited action</th>
+                <th>Audited changes</th>
+                </tr>
+                <% offer.each do |offer| %>
+                <tr>
+                <td><%= offer.title %></td>
+                <td><%= offer.audits.count %></td>
+                <% audit = offer.audits.last %>  
+                <td><%= audit.action %></td>
+                <td><%= audit.audited_changes %></td>
+                </tr>
+            </div>
+            <% end %>
+        </table>
+        
+        </div>
+
+        <!-- POPUP footer -->
+        <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+    </div>
+    </div>
+</div>
+</div>
