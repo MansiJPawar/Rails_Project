@@ -5,7 +5,9 @@ class SportsController < ApplicationController
 
   # GET /sports or /sports.json
   def index
-    ContactMailerJob.perform_later 1,2,3
+    # ContactMailerJob.perform_later 1,2,3
+    # #ContactMailerJob.perform_in(5.minutes,'hi',5)
+    # #ContactMailerJob.perform_in(5.minutes.from_now,'hi',5) 
     @sports = Sport.all
   end
 
