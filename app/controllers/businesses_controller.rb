@@ -72,6 +72,8 @@ class BusinessesController < ApplicationController
 
     def set_business
       @business = Business.find(params[:id])
+    rescue ActiveRecord::RecordNotFound =>error
+      redirect_to businesses_path, notice: "Sorry record is not their"
     end
  
     def business_params

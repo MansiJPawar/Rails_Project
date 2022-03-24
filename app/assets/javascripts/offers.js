@@ -12,8 +12,8 @@ $(document).on("turbolinks:load", function() {
         { title: "Business", data: "business_name" },
         { title: "Title", data: "title" },
         { title: "Description", data: "description" },
-        { title: "Start Time", data: "start_date" },
-        { title: "End Time", data: "end_date" },
+        // { title: "Start Time", data: "start_date" },
+        // { title: "End Time", data: "end_date" },
         {  
           "data": null,
           "bSortable": false,
@@ -28,6 +28,13 @@ $(document).on("turbolinks:load", function() {
            return  "<a class='btn btn-info btn-sm' href = '/offers/" + data.id +
            "data-confirm='Are you sure?' data-method='delete' data-toggle='tooltip' data-placement='top' data-original-title='Destroy Business'>"
            + 'Delete' + '</a>'; }
+        },
+        {  
+          "data": null,
+          "bSortable": false,
+          "mRender": function(data, type, full) {
+           return '<a class="btn btn-info btn-sm"">' + 'Audit' + '</a>';
+           }
         },
         ],
           order: [['1', 'desc']]

@@ -16,6 +16,9 @@ class Offer < ApplicationRecord
   #Audits
   audited
 
+  #paper_trail
+  #has_paper_trail
+
    #Validation
    #validates :title, :description, :start_date, :end_date, presence: true
    

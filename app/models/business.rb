@@ -16,16 +16,16 @@ class Business < ApplicationRecord
   has_many :offers
 
   #limit audit
-  audited max_audits: 3
+  #audited max_audits: 3
 
   #call to require comments for all audits.
   #audited :comment_required => true
 
   # update an audit only if audit_comment is present set to false
-  audited :update_with_comment_only => false
+  #audited :update_with_comment_only => false
   
   #Audit
-  #audited
+  audited
 
   #More Audit Options
   # Single field

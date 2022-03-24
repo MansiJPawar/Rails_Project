@@ -61,8 +61,6 @@ $(document).ready(function(){
       columns: [
       {title: 'Business', data: 'name'},
       {title: 'Address', data: 'address'},
-      {title: 'StartDate', data: 'start_date'},
-      {title: 'EndDate', data: 'finish_date'},
       {  
         "data": null,
         "bSortable": false,
@@ -78,6 +76,14 @@ $(document).ready(function(){
          "data-confirm='Are you sure?' data-method='delete' data-toggle='tooltip' data-placement='top' data-original-title='Destroy Business'>"
          + 'Delete' + '</a>'; }
       },
+      {  
+        "data": null,
+        "bSortable": false,
+        "mRender": function(data, type, full) {
+         return '<a class="btn btn-info btn-sm"">' + 'Audit' + '</a>';
+         }
+      },
+   
       
       // {
       //   "mrender": function(data, type, row) {

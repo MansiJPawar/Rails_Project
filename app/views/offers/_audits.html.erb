@@ -17,37 +17,69 @@
         </div>
         
         <!-- POPUP body -->
-        <% offer = Offer.all %>
-          
+        <% offer = Offer.last %>        
         <div class="modal-body">
-
-        <table> 
-            <div>
+          <table class="table table-striped">
             <tr>
-                <th>Offer Name</th>
-                <th>Audit count</th>
-                <th>Audited action</th>
-                <th>Audited changes</th>
-                </tr>
-                <% offer.each do |offer| %>
-                <tr>
-                <td><%= offer.title %></td>
-                <td><%= offer.audits.count %></td>
-                <% audit = offer.audits.last %>  
-                <td><%= audit.action %></td>
-                <td><%= audit.audited_changes %></td>
-                </tr>
-            </div>
-            <% end %>
-        </table>
-        
+                <td></td>
+                <th scope="col">Audit 1</th>
+                <th scope="col">Audit 2</th>
+                <th scope="col">Audit 3</th>
+            </tr>
+            <tr>
+                <th scope="row">Title</th>
+                <td><%= offer.revisions.pluck(:title).first %></td>
+                <td><%= offer.revisions.pluck(:title).second %></td>
+                <td><%= offer.revisions.pluck(:title).third %></td>
+            </tr>
+            <tr>
+                <th scope="row">Description</th>
+                <td><%= offer.revisions.pluck(:description).first %></td>
+                <td><%= offer.revisions.pluck(:description).second %></td>
+                <td><%= offer.revisions.pluck(:description).third %></td>
+            </tr>
+            <tr>
+                <th scope="row">Updated_at</th>
+                <td><%= Offer.first.updated_at %></td>
+                <td><%= Offer.second.updated_at %></td>
+                <td><%= Offer.third.updated_at %></td>
+            </tr> 
+          </table>
         </div>
 
         <!-- POPUP footer -->
         <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         </div>
-    </div>
+      </div>
     </div>
 </div>
 </div>
+
+<!-- <table class="table"> 
+    <div>
+    <tr>
+        <th>business name</th>
+        <th>title</th>
+        <th>description</th>
+    </tr>
+        <tr>
+        <% version = offer.revisions.last %>
+        <td><%= offer.revisions.pluck(:title).first %></td>
+        <td><%= version.title %></td>
+        <td><%= version.description %></td>
+    </tr>
+    </div>
+</table> -->
+      <!-- <th>Audit</th> -->
+                <!-- <th>created at</th>
+                <th>updated at</th> -->
+
+   <!-- <% count = offer.audits.count %>
+                <% while count!= 1 %>
+                </td><%= puts count %></td>
+                <%= count -= 1 %> -->
+                <!-- <% end %> -->
+                <!-- <td><%= offer.audits.count %></td> -->  
+                <!-- <td><%= offer.created_at %></td>
+                <td><%= offer.updated_at %></td> -->

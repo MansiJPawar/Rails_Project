@@ -1,0 +1,59 @@
+<div>
+
+<!-- Button to Open the POPUP -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+    Audit
+</button>
+
+<!-- AUDIT POPUP  -->
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+    
+        <!-- POPUP Header -->
+        <div class="modal-header">
+        <h4 class="modal-title">Business Audits</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- POPUP body -->
+        <% business = Business.all %>
+            
+        <!-- POPUP body -->
+        <% business = Business.last %>        
+        <div class="modal-body">
+          <table class="table table-striped">
+            <tr>
+                <td></td>
+                <th scope="col">Audit 1</th>
+                <th scope="col">Audit 2</th>
+                <th scope="col">Audit 3</th>
+            </tr>
+            <tr>
+                <th scope="row">Name</th>
+                <td><%= business.revisions.pluck(:name).first %></td>
+                <td><%= business.revisions.pluck(:name).second %></td>
+                <td><%= business.revisions.pluck(:name).third %></td>
+            </tr>
+            <tr>
+                <th scope="row">Address</th>
+                <td><%= business.revisions.pluck(:address).first %></td>
+                <td><%= business.revisions.pluck(:address).second %></td>
+                <td><%= business.revisions.pluck(:address).third %></td>
+            </tr>
+            <tr>
+                <th scope="row">Updated_at</th>
+                <td><%= Business.first.updated_at %></td>
+                <td><%= Business.second.updated_at %></td>
+                <td><%= Business.third.updated_at %></td>
+            </tr> 
+          </table>
+        </div>
+        <!-- POPUP footer -->
+        <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+    </div>
+    </div>
+</div>
+</div>

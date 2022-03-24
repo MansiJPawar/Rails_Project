@@ -81,3 +81,8 @@ gem 'whenever', require: false
 
 #audit gem to store records 
 gem "audited", "~> 5.0"
+
+#PaperTrial for maintain audit records
+gem 'paper_trail'
+
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

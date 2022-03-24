@@ -1,0 +1,39 @@
+// Place all the styles related to the Jquerys controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.selected { color:green; }
+.highlight { background:blue; }
+
+// div { 
+//   width:70px; height:50px; float:left; 
+//   margin:5px; background:red; cursor:pointer;
+// }
+
+#division{ margin:10px;padding:12px; border:2px solid #666; width:100px;}
+
+#division1{margin:10px;padding:12px; border:2px solid #666; width:100px;}
+
+#division2{margin:10px;padding:12px; border:1px solid #666; width:60px;}
+
+#division3{margin:10px;padding:12px; border:4px solid #666; width:50px;}
+
+#div4{margin:10px;padding:12px; border:4px solid #666; width:50px;}
+
+#div5{margin:10px;padding:12px; border:4px solid #666; width:80px;color: burlywood;}
+
+.mydiv1{ 
+    margin:10px;
+    padding:12px; 
+    border:2px solid #666; 
+    width:100px; 
+    height:100px;
+ }
+
+.clickme{ 
+    margin:10px;
+    padding:12px; 
+    border:2px solid #666; 
+    width:100px; 
+    height:50px;
+ }
