@@ -1,0 +1,2 @@
+class MultiDatum < ApplicationRecord
+end
