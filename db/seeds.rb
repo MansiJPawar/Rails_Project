@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Product.destroy_all
+
+10.times do |index|
+  Product.create!(
+    name: "Name #{index}",
+    brand: "Brand #{index}",
+    price:  "Price #{index}",
+    description: "Description #{index}" 
+  )
+end
